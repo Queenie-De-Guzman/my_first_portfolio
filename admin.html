@@ -30,380 +30,151 @@
       --sidebar: 260px;
     }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--ink);
-      color: var(--text);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--ink); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.6; }
     ::-webkit-scrollbar { width: 3px; }
     ::-webkit-scrollbar-track { background: var(--ink2); }
     ::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 2px; }
 
-    /* ══ LOGIN SCREEN ══ */
+    /* ══ LOGIN ══ */
     #loginScreen {
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
       background: var(--ink);
       background-image: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(200,240,96,0.12), transparent);
       padding: 1.5rem;
     }
-    .login-card {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      width: 100%; max-width: 380px;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.6), var(--glow);
-    }
-    .login-logo {
-      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2rem;
-      color: var(--lime); text-align: center; margin-bottom: 0.4rem;
-    }
-    .login-sub {
-      color: var(--muted); font-size: 0.8rem; text-align: center;
-      margin-bottom: 2rem; letter-spacing: 0.3px;
-    }
+    .login-card { background: var(--surface); border: 1px solid var(--border2); border-radius: 20px; padding: 2.5rem 2rem; width: 100%; max-width: 380px; box-shadow: 0 32px 80px rgba(0,0,0,0.6), var(--glow); }
+    .login-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2rem; color: var(--lime); text-align: center; margin-bottom: 0.4rem; }
+    .login-sub { color: var(--muted); font-size: 0.8rem; text-align: center; margin-bottom: 2rem; letter-spacing: 0.3px; }
     .login-field { margin-bottom: 1rem; }
-    .login-field label {
-      display: block; font-size: 0.72rem; font-weight: 600;
-      color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;
-      margin-bottom: 0.4rem;
-    }
-    .login-field input {
-      width: 100%; padding: 0.8rem 0.95rem;
-      background: var(--ink2); border: 1px solid var(--border);
-      border-radius: 10px; color: var(--text);
-      font-family: 'DM Sans', sans-serif; font-size: 0.92rem;
-      transition: border-color 0.22s, box-shadow 0.22s;
-    }
-    .login-field input:focus {
-      outline: none; border-color: var(--lime);
-      box-shadow: 0 0 0 3px rgba(200,240,96,0.1);
-    }
+    .login-field label { display: block; font-size: 0.72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+    .login-field input { width: 100%; padding: 0.8rem 0.95rem; background: var(--ink2); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.92rem; transition: border-color 0.22s, box-shadow 0.22s; }
+    .login-field input:focus { outline: none; border-color: var(--lime); box-shadow: 0 0 0 3px rgba(200,240,96,0.1); }
     .login-field input::placeholder { color: #3a3a58; }
-    .login-err {
-      background: rgba(251,113,133,0.1); border: 1px solid rgba(251,113,133,0.25);
-      color: var(--rose); padding: 0.7rem 0.9rem; border-radius: 8px;
-      font-size: 0.82rem; margin-bottom: 1rem; display: none;
-    }
-    .login-btn {
-      width: 100%; padding: 0.88rem; border-radius: 100px;
-      background: var(--lime); color: var(--ink);
-      font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 700;
-      border: none; cursor: pointer;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 30px rgba(200,240,96,0.2);
-    }
+    .login-err { background: rgba(251,113,133,0.1); border: 1px solid rgba(251,113,133,0.25); color: var(--rose); padding: 0.7rem 0.9rem; border-radius: 8px; font-size: 0.82rem; margin-bottom: 1rem; display: none; }
+    .login-btn { width: 100%; padding: 0.88rem; border-radius: 100px; background: var(--lime); color: var(--ink); font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 700; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 30px rgba(200,240,96,0.2); }
     .login-btn:hover { background: var(--lime2); transform: translateY(-2px); box-shadow: 0 0 50px rgba(200,240,96,0.35); }
     .login-hint { color: var(--muted); font-size: 0.72rem; text-align: center; margin-top: 1.2rem; }
-    .login-hint code {
-      background: var(--ink2); border: 1px solid var(--border);
-      padding: 0.15rem 0.5rem; border-radius: 5px;
-      color: var(--lime); font-size: 0.72rem;
-    }
+    .login-hint code { background: var(--ink2); border: 1px solid var(--border); padding: 0.15rem 0.5rem; border-radius: 5px; color: var(--lime); font-size: 0.72rem; }
 
     /* ══ ADMIN LAYOUT ══ */
     #adminApp { display: none; min-height: 100vh; }
     #adminApp.active { display: flex; }
 
-    /* SIDEBAR */
-    .sidebar {
-      width: var(--sidebar); flex-shrink: 0;
-      background: var(--ink2);
-      border-right: 1px solid var(--border);
-      display: flex; flex-direction: column;
-      position: fixed; top: 0; left: 0; bottom: 0;
-      z-index: 100; overflow-y: auto;
-    }
-    .sb-header {
-      padding: 1.5rem 1.25rem 1rem;
-      border-bottom: 1px solid var(--border);
-    }
+    .sidebar { width: var(--sidebar); flex-shrink: 0; background: var(--ink2); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0; z-index: 100; overflow-y: auto; }
+    .sb-header { padding: 1.5rem 1.25rem 1rem; border-bottom: 1px solid var(--border); }
     .sb-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--lime); }
     .sb-role { color: var(--muted); font-size: 0.72rem; margin-top: 0.2rem; }
-
     .sb-nav { padding: 1rem 0.75rem; flex: 1; }
-    .sb-section-label {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 1.2px;
-      text-transform: uppercase; color: var(--muted);
-      padding: 0.6rem 0.5rem 0.4rem; margin-top: 0.5rem;
-    }
-    .sb-link {
-      display: flex; align-items: center; gap: 0.7rem;
-      padding: 0.65rem 0.75rem; border-radius: 10px;
-      cursor: pointer; color: var(--muted);
-      font-size: 0.85rem; font-weight: 500;
-      transition: all 0.2s; margin-bottom: 2px;
-      border: none; background: none; width: 100%; text-align: left;
-    }
+    .sb-section-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); padding: 0.6rem 0.5rem 0.4rem; margin-top: 0.5rem; }
+    .sb-link { display: flex; align-items: center; gap: 0.7rem; padding: 0.65rem 0.75rem; border-radius: 10px; cursor: pointer; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: all 0.2s; margin-bottom: 2px; border: none; background: none; width: 100%; text-align: left; }
     .sb-link:hover { background: rgba(200,240,96,0.06); color: var(--text); }
     .sb-link.active { background: rgba(200,240,96,0.1); color: var(--lime); font-weight: 600; }
     .sb-link .ico { font-size: 1rem; width: 20px; text-align: center; flex-shrink: 0; }
-
-    .sb-footer {
-      padding: 1rem 0.75rem;
-      border-top: 1px solid var(--border);
-    }
-    .logout-btn {
-      display: flex; align-items: center; gap: 0.6rem;
-      width: 100%; padding: 0.65rem 0.75rem; border-radius: 10px;
-      background: rgba(251,113,133,0.08); border: 1px solid rgba(251,113,133,0.15);
-      color: var(--rose); font-size: 0.82rem; font-weight: 600;
-      cursor: pointer; transition: all 0.2s;
-    }
+    .sb-footer { padding: 1rem 0.75rem; border-top: 1px solid var(--border); }
+    .logout-btn { display: flex; align-items: center; gap: 0.6rem; width: 100%; padding: 0.65rem 0.75rem; border-radius: 10px; background: rgba(251,113,133,0.08); border: 1px solid rgba(251,113,133,0.15); color: var(--rose); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
     .logout-btn:hover { background: rgba(251,113,133,0.15); }
 
-    /* MAIN CONTENT */
-    .main {
-      margin-left: var(--sidebar);
-      flex: 1; min-height: 100vh;
-      display: flex; flex-direction: column;
-    }
-    .topbar {
-      background: rgba(8,8,14,0.9);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem; height: 60px;
-      display: flex; align-items: center; justify-content: space-between;
-      position: sticky; top: 0; z-index: 50;
-    }
+    .main { margin-left: var(--sidebar); flex: 1; min-height: 100vh; display: flex; flex-direction: column; }
+    .topbar { background: rgba(8,8,14,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
     .topbar-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; }
     .topbar-actions { display: flex; gap: 0.6rem; align-items: center; }
-    .tb-badge {
-      background: rgba(200,240,96,0.08); border: 1px solid rgba(200,240,96,0.2);
-      color: var(--lime); padding: 0.3rem 0.75rem;
-      border-radius: 100px; font-size: 0.72rem; font-weight: 600;
-    }
-
+    .tb-badge { background: rgba(200,240,96,0.08); border: 1px solid rgba(200,240,96,0.2); color: var(--lime); padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.72rem; font-weight: 600; }
     .content { padding: 2rem; flex: 1; }
 
-    /* ══ PANELS ══ */
     .panel { display: none; }
     .panel.active { display: block; }
-
     .panel-header { margin-bottom: 1.75rem; }
-    .panel-title {
-      font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800;
-      letter-spacing: -0.5px; margin-bottom: 0.3rem;
-    }
+    .panel-title { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 0.3rem; }
     .panel-desc { color: var(--muted); font-size: 0.87rem; }
 
-    /* CARDS */
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem;
-    }
-    .card-title {
-      font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700;
-      margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;
-      padding-bottom: 0.85rem; border-bottom: 1px solid var(--border);
-    }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; }
+    .card-title { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--border); }
     .card-title .ico { font-size: 1rem; }
 
-    /* FORM ELEMENTS */
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
     .field { margin-bottom: 0.85rem; }
-    .field label {
-      display: block; font-size: 0.7rem; font-weight: 600;
-      color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;
-      margin-bottom: 0.4rem;
-    }
-    .field input, .field textarea, .field select {
-      width: 100%; padding: 0.72rem 0.9rem;
-      background: var(--ink2); border: 1px solid var(--border);
-      border-radius: 9px; color: var(--text);
-      font-family: 'DM Sans', sans-serif; font-size: 0.87rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .field input:focus, .field textarea:focus, .field select:focus {
-      outline: none; border-color: var(--lime); box-shadow: 0 0 0 3px rgba(200,240,96,0.08);
-    }
+    .field label { display: block; font-size: 0.7rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+    .field input, .field textarea, .field select { width: 100%; padding: 0.72rem 0.9rem; background: var(--ink2); border: 1px solid var(--border); border-radius: 9px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.87rem; transition: border-color 0.2s, box-shadow 0.2s; }
+    .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--lime); box-shadow: 0 0 0 3px rgba(200,240,96,0.08); }
     .field textarea { resize: vertical; min-height: 90px; }
     .field select { cursor: pointer; }
     .field input::placeholder, .field textarea::placeholder { color: #3a3a58; }
 
-    /* SAVE BUTTON */
-    .save-btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.72rem 1.5rem; border-radius: 100px;
-      background: var(--lime); color: var(--ink);
-      font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700;
-      border: none; cursor: pointer;
-      transition: all 0.22s; box-shadow: 0 0 20px rgba(200,240,96,0.2);
-    }
+    .save-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.72rem 1.5rem; border-radius: 100px; background: var(--lime); color: var(--ink); font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.22s; box-shadow: 0 0 20px rgba(200,240,96,0.2); }
     .save-btn:hover { background: var(--lime2); transform: translateY(-2px); }
     .save-btn.saving { opacity: 0.7; pointer-events: none; }
-
-    .cancel-btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.72rem 1.2rem; border-radius: 100px;
-      background: transparent; color: var(--muted);
-      font-size: 0.85rem; font-weight: 500;
-      border: 1px solid var(--border); cursor: pointer;
-      transition: all 0.22s;
-    }
+    .cancel-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.72rem 1.2rem; border-radius: 100px; background: transparent; color: var(--muted); font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); cursor: pointer; transition: all 0.22s; }
     .cancel-btn:hover { border-color: var(--border2); color: var(--text); }
-
-    .delete-btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.55rem 1rem; border-radius: 100px;
-      background: rgba(251,113,133,0.1); color: var(--rose);
-      font-size: 0.78rem; font-weight: 600;
-      border: 1px solid rgba(251,113,133,0.2); cursor: pointer;
-      transition: all 0.22s;
-    }
+    .delete-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; border-radius: 100px; background: rgba(251,113,133,0.1); color: var(--rose); font-size: 0.78rem; font-weight: 600; border: 1px solid rgba(251,113,133,0.2); cursor: pointer; transition: all 0.22s; }
     .delete-btn:hover { background: rgba(251,113,133,0.2); }
-
-    .add-btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.6rem 1.1rem; border-radius: 100px;
-      background: rgba(200,240,96,0.08); color: var(--lime);
-      font-size: 0.8rem; font-weight: 600;
-      border: 1px solid rgba(200,240,96,0.2); cursor: pointer;
-      transition: all 0.22s;
-    }
+    .add-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.1rem; border-radius: 100px; background: rgba(200,240,96,0.08); color: var(--lime); font-size: 0.8rem; font-weight: 600; border: 1px solid rgba(200,240,96,0.2); cursor: pointer; transition: all 0.22s; }
     .add-btn:hover { background: rgba(200,240,96,0.15); }
-
     .btn-row { display: flex; align-items: center; gap: 0.7rem; margin-top: 1rem; flex-wrap: wrap; }
 
-    /* TOAST */
-    #toast {
-      position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(8px);
-      background: var(--surface); border: 1px solid rgba(200,240,96,0.3);
-      color: var(--lime); padding: 0.7rem 1.4rem;
-      border-radius: 100px; font-size: 0.85rem; font-weight: 600;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.5), var(--glow);
-      opacity: 0; pointer-events: none; z-index: 9999;
-      transition: opacity 0.3s, transform 0.3s;
-      white-space: nowrap;
-    }
+    #toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(8px); background: var(--surface); border: 1px solid rgba(200,240,96,0.3); color: var(--lime); padding: 0.7rem 1.4rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 8px 32px rgba(0,0,0,0.5), var(--glow); opacity: 0; pointer-events: none; z-index: 9999; transition: opacity 0.3s, transform 0.3s; white-space: nowrap; }
     #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
     #toast.err { border-color: rgba(251,113,133,0.3); color: var(--rose); }
 
-    /* ITEM LIST */
     .item-list { display: flex; flex-direction: column; gap: 0.75rem; }
-    .item-card {
-      background: var(--ink2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1rem 1.1rem;
-      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
-    }
+    .item-card { background: var(--ink2); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
     .item-card:hover { border-color: var(--border2); }
     .item-info { flex: 1; min-width: 0; }
     .item-name { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; }
     .item-meta { color: var(--muted); font-size: 0.77rem; line-height: 1.5; }
     .item-actions { display: flex; gap: 0.5rem; flex-shrink: 0; align-items: center; }
-
-    .edit-btn {
-      display: inline-flex; align-items: center; gap: 0.3rem;
-      padding: 0.42rem 0.85rem; border-radius: 100px;
-      background: rgba(103,232,249,0.08); color: var(--sky);
-      font-size: 0.75rem; font-weight: 600;
-      border: 1px solid rgba(103,232,249,0.18); cursor: pointer;
-      transition: all 0.2s;
-    }
+    .edit-btn { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.42rem 0.85rem; border-radius: 100px; background: rgba(103,232,249,0.08); color: var(--sky); font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(103,232,249,0.18); cursor: pointer; transition: all 0.2s; }
     .edit-btn:hover { background: rgba(103,232,249,0.15); }
 
-    /* MODAL */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 500;
-      background: rgba(8,8,14,0.85);
-      backdrop-filter: blur(8px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 1.5rem;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.25s;
-    }
+    .modal-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(8,8,14,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal {
-      background: var(--surface); border: 1px solid var(--border2);
-      border-radius: 18px; padding: 1.75rem;
-      width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto;
-      transform: scale(0.96); transition: transform 0.25s;
-    }
+    .modal { background: var(--surface); border: 1px solid var(--border2); border-radius: 18px; padding: 1.75rem; width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; transform: scale(0.96); transition: transform 0.25s; }
     .modal-overlay.open .modal { transform: scale(1); }
-    .modal-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
-    }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
     .modal-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; }
-    .modal-close {
-      background: var(--ink2); border: 1px solid var(--border);
-      color: var(--muted); width: 32px; height: 32px; border-radius: 8px;
-      cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s;
-    }
+    .modal-close { background: var(--ink2); border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
     .modal-close:hover { border-color: var(--rose); color: var(--rose); }
 
-    /* STATS ROW */
     .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.85rem; margin-bottom: 1.5rem; }
-    .stat-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.1rem;
-    }
-    .stat-card-num {
-      font-family: 'Syne', sans-serif; font-size: 1.75rem; font-weight: 800;
-      color: var(--lime); line-height: 1;
-    }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem; }
+    .stat-card-num { font-family: 'Syne', sans-serif; font-size: 1.75rem; font-weight: 800; color: var(--lime); line-height: 1; }
     .stat-card-lbl { color: var(--muted); font-size: 0.72rem; margin-top: 0.3rem; }
 
-    /* COLOR PICKER for theme */
-    .color-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .color-opt {
-      width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
-      border: 3px solid transparent; transition: border-color 0.2s, transform 0.2s;
-    }
-    .color-opt:hover, .color-opt.selected { border-color: white; transform: scale(1.1); }
-
-    /* TAG EDITOR */
     .tag-editor { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-    .tag-chip {
-      background: var(--ink2); border: 1px solid var(--border);
-      padding: 0.25rem 0.6rem; border-radius: 100px;
-      font-size: 0.74rem; color: var(--muted);
-      display: flex; align-items: center; gap: 0.3rem;
-    }
-    .tag-chip button {
-      background: none; border: none; color: var(--rose);
-      cursor: pointer; font-size: 0.8rem; line-height: 1; padding: 0;
-      display: flex; align-items: center;
-    }
-    .tag-add-input {
-      background: var(--ink2); border: 1px solid var(--border);
-      border-radius: 100px; padding: 0.25rem 0.7rem;
-      font-size: 0.74rem; color: var(--text); width: 100px;
-    }
+    .tag-chip { background: var(--ink2); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 100px; font-size: 0.74rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; }
+    .tag-chip button { background: none; border: none; color: var(--rose); cursor: pointer; font-size: 0.8rem; line-height: 1; padding: 0; display: flex; align-items: center; }
+    .tag-add-input { background: var(--ink2); border: 1px solid var(--border); border-radius: 100px; padding: 0.25rem 0.7rem; font-size: 0.74rem; color: var(--text); width: 100px; }
     .tag-add-input:focus { outline: none; border-color: var(--lime); }
 
-    /* DASHBOARD */
     .quick-actions { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; margin-top: 1.25rem; }
-    .qa-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.25rem;
-      cursor: pointer; transition: all 0.25s;
-      display: flex; align-items: center; gap: 0.85rem;
-    }
+    .qa-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; cursor: pointer; transition: all 0.25s; display: flex; align-items: center; gap: 0.85rem; }
     .qa-card:hover { border-color: rgba(200,240,96,0.25); transform: translateY(-3px); box-shadow: var(--glow); }
     .qa-ico { font-size: 1.5rem; }
     .qa-name { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; }
     .qa-desc { color: var(--muted); font-size: 0.73rem; }
 
-    .preview-link {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      color: var(--sky); font-size: 0.82rem; text-decoration: none;
-      font-weight: 600; transition: gap 0.2s;
-    }
+    .preview-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--sky); font-size: 0.82rem; text-decoration: none; font-weight: 600; transition: gap 0.2s; }
     .preview-link:hover { gap: 0.7rem; }
 
-    /* RESPONSIVE */
+    /* ══ VISITOR HISTORY PANEL ══ */
+    .vis-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; margin-bottom: 1.5rem; }
+    .vis-entry { background: var(--ink2); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.85rem; }
+    .vis-entry:hover { border-color: var(--border2); }
+    .vis-flag { font-size: 1.4rem; flex-shrink: 0; }
+    .vis-info { flex: 1; min-width: 0; }
+    .vis-loc { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.15rem; }
+    .vis-time { color: var(--muted); font-size: 0.73rem; }
+    .vis-badge-new { background: rgba(200,240,96,0.1); border: 1px solid rgba(200,240,96,0.25); color: var(--lime); font-size: 0.62rem; font-weight: 700; padding: 0.12rem 0.5rem; border-radius: 100px; flex-shrink: 0; }
+    .vis-empty { color: var(--muted); text-align: center; padding: 3rem; font-size: 0.9rem; }
+    .country-chip { display: inline-flex; align-items: center; gap: 0.3rem; background: var(--ink2); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 100px; font-size: 0.74rem; color: var(--muted); margin: 0.2rem; }
+
     @media (max-width: 900px) {
       :root { --sidebar: 220px; }
       .form-grid { grid-template-columns: 1fr; }
       .form-grid-3 { grid-template-columns: 1fr 1fr; }
       .stats-row { grid-template-columns: 1fr 1fr; }
       .quick-actions { grid-template-columns: 1fr 1fr; }
+      .vis-stats { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 660px) {
       :root { --sidebar: 0px; }
@@ -413,42 +184,28 @@
       .content { padding: 1.25rem; }
       .stats-row { grid-template-columns: 1fr 1fr; }
       .quick-actions { grid-template-columns: 1fr; }
+      .vis-stats { grid-template-columns: 1fr 1fr; }
       .topbar { padding: 0 1.25rem; }
       #mobMenuBtn { display: flex !important; }
     }
-
-    #mobMenuBtn {
-      display: none; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 8px;
-      background: var(--surface); border: 1px solid var(--border);
-      color: var(--text); cursor: pointer; font-size: 1rem;
-    }
+    #mobMenuBtn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; }
   </style>
 </head>
 <body>
 
-<!-- ══ LOGIN ══ -->
 <div id="loginScreen">
   <div class="login-card">
     <div class="login-logo">QDG ⚡</div>
     <div class="login-sub">Portfolio Admin Panel</div>
     <div class="login-err" id="loginErr">Maling username o password.</div>
-    <div class="login-field">
-      <label>Username</label>
-      <input type="text" id="loginUser" placeholder="admin" autocomplete="username">
-    </div>
-    <div class="login-field">
-      <label>Password</label>
-      <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password">
-    </div>
+    <div class="login-field"><label>Username</label><input type="text" id="loginUser" placeholder="admin" autocomplete="username"></div>
+    <div class="login-field"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password"></div>
     <button class="login-btn" onclick="doLogin()">Sign In →</button>
     <div class="login-hint">Default: <code>admin</code> / <code>qdg2025</code><br>Palitan sa Settings pagkatapos.</div>
   </div>
 </div>
 
-<!-- ══ ADMIN APP ══ -->
 <div id="adminApp">
-  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sb-header">
       <div class="sb-logo">QDG Admin</div>
@@ -466,6 +223,9 @@
       <button class="sb-link" onclick="showPanel('experience',this)"><span class="ico">📅</span> Experience</button>
       <button class="sb-link" onclick="showPanel('contact',this)"><span class="ico">📬</span> Contact</button>
 
+      <div class="sb-section-label">Analytics</div>
+      <button class="sb-link" onclick="showPanel('visitors',this)"><span class="ico">👁️</span> Visitor History</button>
+
       <div class="sb-section-label">System</div>
       <button class="sb-link" onclick="showPanel('settings',this)"><span class="ico">⚙️</span> Settings</button>
     </nav>
@@ -474,7 +234,6 @@
     </div>
   </aside>
 
-  <!-- MAIN -->
   <div class="main">
     <div class="topbar">
       <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -489,7 +248,7 @@
 
     <div class="content">
 
-      <!-- ══ DASHBOARD ══ -->
+      <!-- DASHBOARD -->
       <div class="panel active" id="panel-dashboard">
         <div class="panel-header">
           <div class="panel-title">Welcome back, Queenie! 👋</div>
@@ -499,29 +258,17 @@
           <div class="stat-card"><div class="stat-card-num" id="dash-proj">7</div><div class="stat-card-lbl">Projects</div></div>
           <div class="stat-card"><div class="stat-card-num" id="dash-exp">6</div><div class="stat-card-lbl">Experiences</div></div>
           <div class="stat-card"><div class="stat-card-num" id="dash-skills">6</div><div class="stat-card-lbl">Skill Groups</div></div>
-          <div class="stat-card"><div class="stat-card-num">NC III</div><div class="stat-card-lbl">Certified</div></div>
+          <div class="stat-card"><div class="stat-card-num" id="dash-views">—</div><div class="stat-card-lbl">Total Views</div></div>
         </div>
         <div class="card">
           <div class="card-title"><span class="ico">⚡</span> Quick Edit</div>
           <div class="quick-actions">
-            <div class="qa-card" onclick="showPanel('hero',document.querySelector('[onclick*=hero]'))">
-              <span class="qa-ico">✨</span><div><div class="qa-name">Hero</div><div class="qa-desc">Name, tagline, status</div></div>
-            </div>
-            <div class="qa-card" onclick="showPanel('projects',document.querySelector('[onclick*=projects]'))">
-              <span class="qa-ico">🗂️</span><div><div class="qa-name">Projects</div><div class="qa-desc">Add or edit projects</div></div>
-            </div>
-            <div class="qa-card" onclick="showPanel('experience',document.querySelector('[onclick*=experience]'))">
-              <span class="qa-ico">📅</span><div><div class="qa-name">Experience</div><div class="qa-desc">Timeline entries</div></div>
-            </div>
-            <div class="qa-card" onclick="showPanel('skills',document.querySelector('[onclick*=skills]'))">
-              <span class="qa-ico">💡</span><div><div class="qa-name">Skills</div><div class="qa-desc">Skill groups & tags</div></div>
-            </div>
-            <div class="qa-card" onclick="showPanel('about',document.querySelector('[onclick*=about]'))">
-              <span class="qa-ico">👤</span><div><div class="qa-name">About</div><div class="qa-desc">Bio & highlights</div></div>
-            </div>
-            <div class="qa-card" onclick="showPanel('contact',document.querySelector('[onclick*=contact]'))">
-              <span class="qa-ico">📬</span><div><div class="qa-name">Contact</div><div class="qa-desc">Links & email</div></div>
-            </div>
+            <div class="qa-card" onclick="showPanel('hero',document.querySelector('[onclick*=hero]'))"><span class="qa-ico">✨</span><div><div class="qa-name">Hero</div><div class="qa-desc">Name, tagline, status</div></div></div>
+            <div class="qa-card" onclick="showPanel('projects',document.querySelector('[onclick*=projects]'))"><span class="qa-ico">🗂️</span><div><div class="qa-name">Projects</div><div class="qa-desc">Add or edit projects</div></div></div>
+            <div class="qa-card" onclick="showPanel('experience',document.querySelector('[onclick*=experience]'))"><span class="qa-ico">📅</span><div><div class="qa-name">Experience</div><div class="qa-desc">Timeline entries</div></div></div>
+            <div class="qa-card" onclick="showPanel('skills',document.querySelector('[onclick*=skills]'))"><span class="qa-ico">💡</span><div><div class="qa-name">Skills</div><div class="qa-desc">Skill groups & tags</div></div></div>
+            <div class="qa-card" onclick="showPanel('visitors',document.querySelector('[onclick*=visitors]'))"><span class="qa-ico">👁️</span><div><div class="qa-name">Visitors</div><div class="qa-desc">Location history</div></div></div>
+            <div class="qa-card" onclick="showPanel('contact',document.querySelector('[onclick*=contact]'))"><span class="qa-ico">📬</span><div><div class="qa-name">Contact</div><div class="qa-desc">Links & email</div></div></div>
           </div>
         </div>
         <div class="card">
@@ -535,12 +282,9 @@
         </div>
       </div>
 
-      <!-- ══ HERO ══ -->
+      <!-- HERO -->
       <div class="panel" id="panel-hero">
-        <div class="panel-header">
-          <div class="panel-title">✨ Hero Section</div>
-          <div class="panel-desc">The first thing visitors see.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">✨ Hero Section</div><div class="panel-desc">The first thing visitors see.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">👤</span> Identity</div>
           <div class="form-grid">
@@ -548,57 +292,39 @@
             <div class="field"><label>Last Name</label><input type="text" id="h-lastname" placeholder="V. De Guzman"></div>
           </div>
           <div class="field"><label>Title / Role</label><input type="text" id="h-title" placeholder="Software Engineer"></div>
-          <div class="field"><label>Tagline / Description</label><textarea id="h-desc" rows="3" placeholder="Full-stack developer crafting…"></textarea></div>
+          <div class="field"><label>Tagline / Description</label><textarea id="h-desc" rows="3"></textarea></div>
           <div class="field"><label>Availability Badge</label><input type="text" id="h-badge" placeholder="Available for Projects"></div>
-          <div class="btn-row">
-            <button class="save-btn" onclick="saveHero()">💾 Save Changes</button>
-          </div>
+          <div class="btn-row"><button class="save-btn" onclick="saveHero()">💾 Save Changes</button></div>
         </div>
         <div class="card">
-          <div class="card-title"><span class="ico">📊</span> Stats Bar (3 items)</div>
+          <div class="card-title"><span class="ico">📊</span> Stats Bar</div>
           <div class="form-grid-3">
-            <div>
-              <div class="field"><label>Stat 1 — Number</label><input type="text" id="stat1-num" placeholder="1+"></div>
-              <div class="field"><label>Stat 1 — Label</label><input type="text" id="stat1-lbl" placeholder="Years Exp."></div>
-            </div>
-            <div>
-              <div class="field"><label>Stat 2 — Number</label><input type="text" id="stat2-num" placeholder="7+"></div>
-              <div class="field"><label>Stat 2 — Label</label><input type="text" id="stat2-lbl" placeholder="Projects"></div>
-            </div>
-            <div>
-              <div class="field"><label>Stat 3 — Number</label><input type="text" id="stat3-num" placeholder="NC III"></div>
-              <div class="field"><label>Stat 3 — Label</label><input type="text" id="stat3-lbl" placeholder="Certified"></div>
-            </div>
+            <div><div class="field"><label>Stat 1 — Number</label><input type="text" id="stat1-num" placeholder="1+"></div><div class="field"><label>Stat 1 — Label</label><input type="text" id="stat1-lbl" placeholder="Years Exp."></div></div>
+            <div><div class="field"><label>Stat 2 — Number</label><input type="text" id="stat2-num" placeholder="7+"></div><div class="field"><label>Stat 2 — Label</label><input type="text" id="stat2-lbl" placeholder="Projects"></div></div>
+            <div><div class="field"><label>Stat 3 — Number</label><input type="text" id="stat3-num" placeholder="NC III"></div><div class="field"><label>Stat 3 — Label</label><input type="text" id="stat3-lbl" placeholder="Certified"></div></div>
           </div>
-          <div class="btn-row">
-            <button class="save-btn" onclick="saveHero()">💾 Save Changes</button>
-          </div>
+          <div class="btn-row"><button class="save-btn" onclick="saveHero()">💾 Save Changes</button></div>
         </div>
         <div class="card">
           <div class="card-title"><span class="ico">💻</span> Terminal Widget</div>
           <div class="field"><label>Stack (comma-separated)</label><input type="text" id="h-stack" placeholder="Laravel, Vue.js, ASP.NET, Django"></div>
           <div class="field"><label>Status Text</label><input type="text" id="h-status" placeholder="🟢 Open to Work"></div>
-          <div class="btn-row">
-            <button class="save-btn" onclick="saveHero()">💾 Save Changes</button>
-          </div>
+          <div class="btn-row"><button class="save-btn" onclick="saveHero()">💾 Save Changes</button></div>
         </div>
       </div>
 
-      <!-- ══ ABOUT ══ -->
+      <!-- ABOUT -->
       <div class="panel" id="panel-about">
-        <div class="panel-header">
-          <div class="panel-title">👤 About Me</div>
-          <div class="panel-desc">Personal info and highlights.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">👤 About Me</div><div class="panel-desc">Personal info and highlights.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">📋</span> Info Card</div>
           <div class="form-grid">
-            <div class="field"><label>Location</label><input type="text" id="a-location" placeholder="Victoria, Oriental Mindoro"></div>
-            <div class="field"><label>Education</label><input type="text" id="a-education" placeholder="BS Information Technology"></div>
-            <div class="field"><label>School</label><input type="text" id="a-school" placeholder="Mindoro State University"></div>
-            <div class="field"><label>Current Role</label><input type="text" id="a-role" placeholder="Software Engineer 1"></div>
-            <div class="field"><label>Certification</label><input type="text" id="a-cert" placeholder="NCIII Java Programming"></div>
-            <div class="field"><label>Status</label><input type="text" id="a-status" placeholder="Open to Opportunities"></div>
+            <div class="field"><label>Location</label><input type="text" id="a-location"></div>
+            <div class="field"><label>Education</label><input type="text" id="a-education"></div>
+            <div class="field"><label>School</label><input type="text" id="a-school"></div>
+            <div class="field"><label>Current Role</label><input type="text" id="a-role"></div>
+            <div class="field"><label>Certification</label><input type="text" id="a-cert"></div>
+            <div class="field"><label>Status</label><input type="text" id="a-status"></div>
           </div>
           <div class="btn-row"><button class="save-btn" onclick="saveAbout()">💾 Save Changes</button></div>
         </div>
@@ -621,76 +347,75 @@
         </div>
       </div>
 
-      <!-- ══ SKILLS ══ -->
+      <!-- SKILLS -->
       <div class="panel" id="panel-skills">
-        <div class="panel-header">
-          <div class="panel-title">💡 Skills & Expertise</div>
-          <div class="panel-desc">Manage skill groups and their tags.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">💡 Skills & Expertise</div><div class="panel-desc">Manage skill groups and their tags.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">📋</span> Skill Groups</div>
           <div class="item-list" id="skillList"></div>
-          <div class="btn-row" style="margin-top:1rem;">
-            <button class="add-btn" onclick="openSkillModal(-1)">＋ Add Skill Group</button>
-          </div>
+          <div class="btn-row" style="margin-top:1rem;"><button class="add-btn" onclick="openSkillModal(-1)">＋ Add Skill Group</button></div>
         </div>
       </div>
 
-      <!-- ══ PROJECTS ══ -->
+      <!-- PROJECTS -->
       <div class="panel" id="panel-projects">
-        <div class="panel-header">
-          <div class="panel-title">🗂️ Featured Projects</div>
-          <div class="panel-desc">Add, edit, or remove portfolio projects.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">🗂️ Featured Projects</div><div class="panel-desc">Add, edit, or remove portfolio projects.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">📋</span> All Projects</div>
           <div class="item-list" id="projectList"></div>
-          <div class="btn-row" style="margin-top:1rem;">
-            <button class="add-btn" onclick="openProjectModal(-1)">＋ Add Project</button>
-          </div>
+          <div class="btn-row" style="margin-top:1rem;"><button class="add-btn" onclick="openProjectModal(-1)">＋ Add Project</button></div>
         </div>
       </div>
 
-      <!-- ══ EXPERIENCE ══ -->
+      <!-- EXPERIENCE -->
       <div class="panel" id="panel-experience">
-        <div class="panel-header">
-          <div class="panel-title">📅 Experience & Training</div>
-          <div class="panel-desc">Timeline entries — career and education milestones.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">📅 Experience & Training</div><div class="panel-desc">Timeline entries.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">📋</span> Timeline Entries</div>
           <div class="item-list" id="expList"></div>
-          <div class="btn-row" style="margin-top:1rem;">
-            <button class="add-btn" onclick="openExpModal(-1)">＋ Add Entry</button>
-          </div>
+          <div class="btn-row" style="margin-top:1rem;"><button class="add-btn" onclick="openExpModal(-1)">＋ Add Entry</button></div>
         </div>
       </div>
 
-      <!-- ══ CONTACT ══ -->
+      <!-- CONTACT -->
       <div class="panel" id="panel-contact">
-        <div class="panel-header">
-          <div class="panel-title">📬 Contact Info</div>
-          <div class="panel-desc">Social links and contact email.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">📬 Contact Info</div><div class="panel-desc">Social links and contact email.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">🔗</span> Social Links</div>
           <div class="form-grid">
-            <div class="field"><label>Email Address</label><input type="email" id="c-email" placeholder="you@email.com"></div>
-            <div class="field"><label>LinkedIn URL</label><input type="text" id="c-linkedin" placeholder="https://linkedin.com/in/…"></div>
-            <div class="field"><label>Raket.ph URL</label><input type="text" id="c-raket" placeholder="https://raket.ph/…"></div>
-            <div class="field"><label>Instagram URL</label><input type="text" id="c-ig" placeholder="https://instagram.com/…"></div>
-            <div class="field"><label>GitHub URL</label><input type="text" id="c-github" placeholder="https://github.com/…"></div>
+            <div class="field"><label>Email Address</label><input type="email" id="c-email"></div>
+            <div class="field"><label>LinkedIn URL</label><input type="text" id="c-linkedin"></div>
+            <div class="field"><label>Raket.ph URL</label><input type="text" id="c-raket"></div>
+            <div class="field"><label>Instagram URL</label><input type="text" id="c-ig"></div>
+            <div class="field"><label>GitHub URL</label><input type="text" id="c-github"></div>
           </div>
           <div class="btn-row"><button class="save-btn" onclick="saveContact()">💾 Save Changes</button></div>
         </div>
       </div>
 
-      <!-- ══ SETTINGS ══ -->
-      <div class="panel" id="panel-settings">
+      <!-- VISITORS -->
+      <div class="panel" id="panel-visitors">
         <div class="panel-header">
-          <div class="panel-title">⚙️ Settings</div>
-          <div class="panel-desc">Admin credentials and preferences.</div>
+          <div class="panel-title">👁️ Visitor History</div>
+          <div class="panel-desc">Location and time of each portfolio visit. Stored locally in the browser.</div>
         </div>
+        <div class="stats-row" id="visitorStats" style="grid-template-columns:repeat(3,1fr)"></div>
+        <div class="card">
+          <div class="card-title"><span class="ico">🌍</span> Countries Seen</div>
+          <div id="countryCloud" style="display:flex;flex-wrap:wrap;gap:0.4rem;min-height:40px;"></div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="justify-content:space-between;">
+            <span><span class="ico">📋</span> All Visits (latest first)</span>
+            <button class="delete-btn" onclick="clearVisitorHistory()">🗑️ Clear History</button>
+          </div>
+          <div id="visitorList" style="display:flex;flex-direction:column;gap:0.6rem;"></div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="panel" id="panel-settings">
+        <div class="panel-header"><div class="panel-title">⚙️ Settings</div><div class="panel-desc">Admin credentials and preferences.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">🔐</span> Change Password</div>
           <div class="form-grid">
@@ -706,126 +431,62 @@
         </div>
       </div>
 
-    </div><!-- /content -->
-  </div><!-- /main -->
-</div><!-- /adminApp -->
+    </div>
+  </div>
+</div>
 
-<!-- ══ SKILL MODAL ══ -->
+<!-- SKILL MODAL -->
 <div class="modal-overlay" id="skillModal">
   <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title" id="skillModalTitle">Add Skill Group</div>
-      <button class="modal-close" onclick="closeModal('skillModal')">✕</button>
-    </div>
+    <div class="modal-header"><div class="modal-title" id="skillModalTitle">Add Skill Group</div><button class="modal-close" onclick="closeModal('skillModal')">✕</button></div>
     <input type="hidden" id="skill-idx">
     <div class="field"><label>Icon (emoji)</label><input type="text" id="sk-ico" placeholder="💻" maxlength="4"></div>
     <div class="field"><label>Group Name</label><input type="text" id="sk-name" placeholder="Languages"></div>
-    <div class="field">
-      <label>Tags (press Enter to add)</label>
-      <div class="tag-editor" id="skillTagEditor"></div>
-      <input class="tag-add-input" id="skillTagInput" placeholder="+ tag" onkeydown="addTag(event,'skillTagEditor','skillTagInput')">
-    </div>
-    <div class="btn-row">
-      <button class="save-btn" onclick="saveSkillModal()">💾 Save</button>
-      <button class="cancel-btn" onclick="closeModal('skillModal')">Cancel</button>
-      <button class="delete-btn" id="skillDeleteBtn" onclick="deleteSkill()" style="margin-left:auto">🗑️ Delete</button>
-    </div>
+    <div class="field"><label>Tags (press Enter to add)</label><div class="tag-editor" id="skillTagEditor"></div><input class="tag-add-input" id="skillTagInput" placeholder="+ tag" onkeydown="addTag(event,'skillTagEditor','skillTagInput')"></div>
+    <div class="btn-row"><button class="save-btn" onclick="saveSkillModal()">💾 Save</button><button class="cancel-btn" onclick="closeModal('skillModal')">Cancel</button><button class="delete-btn" id="skillDeleteBtn" onclick="deleteSkill()" style="margin-left:auto">🗑️ Delete</button></div>
   </div>
 </div>
 
-<!-- ══ PROJECT MODAL ══ -->
+<!-- PROJECT MODAL -->
 <div class="modal-overlay" id="projectModal">
   <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title" id="projModalTitle">Add Project</div>
-      <button class="modal-close" onclick="closeModal('projectModal')">✕</button>
-    </div>
+    <div class="modal-header"><div class="modal-title" id="projModalTitle">Add Project</div><button class="modal-close" onclick="closeModal('projectModal')">✕</button></div>
     <input type="hidden" id="proj-idx">
     <div class="form-grid">
-      <div class="field"><label>Project Name</label><input type="text" id="pj-name" placeholder="AGRISYNC"></div>
-      <div class="field"><label>Year / Period</label><input type="text" id="pj-yr" placeholder="2023–25"></div>
+      <div class="field"><label>Project Name</label><input type="text" id="pj-name"></div>
+      <div class="field"><label>Year / Period</label><input type="text" id="pj-yr"></div>
     </div>
     <div class="form-grid">
-      <div class="field"><label>Your Role</label><input type="text" id="pj-role" placeholder="Project Team Leader"></div>
-      <div class="field">
-        <label>Thumb Color</label>
-        <select id="pj-color">
-          <option value="t-lime">🌿 Lime / Green</option>
-          <option value="t-blue">🔵 Blue</option>
-          <option value="t-purple">🟣 Purple</option>
-          <option value="t-sky">🩵 Sky</option>
-          <option value="t-rose">🌹 Rose</option>
-          <option value="t-teal">🩵 Teal</option>
-          <option value="t-amber">🟡 Amber</option>
-        </select>
-      </div>
+      <div class="field"><label>Your Role</label><input type="text" id="pj-role"></div>
+      <div class="field"><label>Thumb Color</label><select id="pj-color"><option value="t-lime">🌿 Lime</option><option value="t-blue">🔵 Blue</option><option value="t-purple">🟣 Purple</option><option value="t-sky">🩵 Sky</option><option value="t-rose">🌹 Rose</option><option value="t-teal">🩵 Teal</option><option value="t-amber">🟡 Amber</option></select></div>
     </div>
-    <div class="field"><label>Emoji Icon</label><input type="text" id="pj-emoji" placeholder="🌾" maxlength="4"></div>
+    <div class="field"><label>Emoji Icon</label><input type="text" id="pj-emoji" placeholder="🚀" maxlength="4"></div>
     <div class="field"><label>Description</label><textarea id="pj-desc" rows="3"></textarea></div>
-    <div class="field">
-      <label>Tech Tags</label>
-      <div class="tag-editor" id="projTagEditor"></div>
-      <input class="tag-add-input" id="projTagInput" placeholder="+ tag" onkeydown="addTag(event,'projTagEditor','projTagInput')">
-    </div>
-    <div class="field"><label>Link URL (leave blank if private)</label><input type="text" id="pj-link" placeholder="https://github.com/…"></div>
-    <div class="field"><label>Link Label</label><input type="text" id="pj-linklbl" placeholder="View on GitHub →"></div>
-    <div class="btn-row">
-      <button class="save-btn" onclick="saveProjModal()">💾 Save</button>
-      <button class="cancel-btn" onclick="closeModal('projectModal')">Cancel</button>
-      <button class="delete-btn" id="projDeleteBtn" onclick="deleteProject()" style="margin-left:auto">🗑️ Delete</button>
-    </div>
+    <div class="field"><label>Tech Tags</label><div class="tag-editor" id="projTagEditor"></div><input class="tag-add-input" id="projTagInput" placeholder="+ tag" onkeydown="addTag(event,'projTagEditor','projTagInput')"></div>
+    <div class="field"><label>Link URL</label><input type="text" id="pj-link"></div>
+    <div class="field"><label>Link Label</label><input type="text" id="pj-linklbl"></div>
+    <div class="btn-row"><button class="save-btn" onclick="saveProjModal()">💾 Save</button><button class="cancel-btn" onclick="closeModal('projectModal')">Cancel</button><button class="delete-btn" id="projDeleteBtn" onclick="deleteProject()" style="margin-left:auto">🗑️ Delete</button></div>
   </div>
 </div>
 
-<!-- ══ EXPERIENCE MODAL ══ -->
+<!-- EXP MODAL -->
 <div class="modal-overlay" id="expModal">
   <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title" id="expModalTitle">Add Experience</div>
-      <button class="modal-close" onclick="closeModal('expModal')">✕</button>
-    </div>
+    <div class="modal-header"><div class="modal-title" id="expModalTitle">Add Experience</div><button class="modal-close" onclick="closeModal('expModal')">✕</button></div>
     <input type="hidden" id="exp-idx">
-    <div class="field"><label>Date / Period</label><input type="text" id="ex-date" placeholder="Feb 17 – May 3, 2025"></div>
-    <div class="field"><label>Title</label><input type="text" id="ex-title" placeholder="QA / Programmer Intern"></div>
+    <div class="field"><label>Date / Period</label><input type="text" id="ex-date"></div>
+    <div class="field"><label>Title</label><input type="text" id="ex-title"></div>
     <div class="field"><label>Description</label><textarea id="ex-desc" rows="4"></textarea></div>
-    <div class="btn-row">
-      <button class="save-btn" onclick="saveExpModal()">💾 Save</button>
-      <button class="cancel-btn" onclick="closeModal('expModal')">Cancel</button>
-      <button class="delete-btn" id="expDeleteBtn" onclick="deleteExp()" style="margin-left:auto">🗑️ Delete</button>
-    </div>
+    <div class="btn-row"><button class="save-btn" onclick="saveExpModal()">💾 Save</button><button class="cancel-btn" onclick="closeModal('expModal')">Cancel</button><button class="delete-btn" id="expDeleteBtn" onclick="deleteExp()" style="margin-left:auto">🗑️ Delete</button></div>
   </div>
 </div>
 
-<!-- TOAST -->
 <div id="toast"></div>
 
 <script>
-/* ══════════════════════════════════════
-   DEFAULT DATA
-══════════════════════════════════════ */
 const DEFAULT = {
-  hero: {
-    firstname:'Queenie', lastname:'V. De Guzman', title:'Software Engineer',
-    desc:'Full-stack developer crafting elegant digital solutions — from cloud-based agricultural systems to government platforms. I build things that matter.',
-    badge:'Available for Projects',
-    stat1_num:'1+', stat1_lbl:'Years Exp.',
-    stat2_num:'7+', stat2_lbl:'Projects',
-    stat3_num:'NC III', stat3_lbl:'Certified',
-    stack:'Laravel, Vue.js, ASP.NET, Django',
-    status:'🟢 Open to Work'
-  },
-  about: {
-    location:'Victoria, Oriental Mindoro', education:'BS Information Technology',
-    school:'Mindoro State University', role:'Software Engineer 1',
-    cert:'NCIII Java Programming', status:'Open to Opportunities',
-    p1:'A passionate Software Engineer with a BS in Information Technology from Mindoro State University. I specialize in full-stack development, quality assurance, and creating impactful digital solutions that solve real-world problems.',
-    p2:'From cloud-based agricultural systems for the Department of Agriculture to educational platforms and government portals — I bring technical expertise and design thinking to every project.',
-    p3:'Experienced in Laravel, Vue.js, ASP.NET Core MVC, Django, and .NET MAUI, plus data analysis with Power BI — I build applications that are functional, performant, and delightful to use.',
-    hl1_t:'Full-Stack Dev', hl1_s:'Frontend to backend',
-    hl2_t:'QA Specialist', hl2_s:'Testing & optimization',
-    hl3_t:'Data Analysis', hl3_s:'Power BI dashboards',
-    hl4_t:'Team Leader', hl4_s:'Led capstone projects'
-  },
+  hero: { firstname:'Queenie', lastname:'V. De Guzman', title:'Software Engineer', desc:'Full-stack developer crafting elegant digital solutions — from cloud-based agricultural systems to government platforms. I build things that matter.', badge:'Available for Projects', stat1_num:'1+', stat1_lbl:'Years Exp.', stat2_num:'7+', stat2_lbl:'Projects', stat3_num:'NC III', stat3_lbl:'Certified', stack:'Laravel, Vue.js, ASP.NET, Django', status:'🟢 Open to Work' },
+  about: { location:'Victoria, Oriental Mindoro', education:'BS Information Technology', school:'Mindoro State University', role:'Software Engineer 1', cert:'NCIII Java Programming', status:'Open to Opportunities', p1:'A passionate Software Engineer with a BS in Information Technology from Mindoro State University. I specialize in full-stack development, quality assurance, and creating impactful digital solutions that solve real-world problems.', p2:'From cloud-based agricultural systems for the Department of Agriculture to educational platforms and government portals — I bring technical expertise and design thinking to every project.', p3:'Experienced in Laravel, Vue.js, ASP.NET Core MVC, Django, and .NET MAUI, plus data analysis with Power BI — I build applications that are functional, performant, and delightful to use.', hl1_t:'Full-Stack Dev', hl1_s:'Frontend to backend', hl2_t:'QA Specialist', hl2_s:'Testing & optimization', hl3_t:'Data Analysis', hl3_s:'Power BI dashboards', hl4_t:'Team Leader', hl4_s:'Led capstone projects' },
   skills: [
     { ico:'💻', name:'Languages', tags:['HTML/CSS','JavaScript','PHP','C#','Python','Java'] },
     { ico:'🛠️', name:'Frameworks', tags:['Laravel','CodeIgniter 4','Vue.js','Django','ASP.NET','.NET MAUI','Bootstrap'] },
@@ -835,48 +496,34 @@ const DEFAULT = {
     { ico:'🤝', name:'Soft Skills', tags:['Leadership','Problem Solving','Agile/Scrum','Communication'] }
   ],
   projects: [
-    { name:'AGRISYNC', yr:'2023–25', role:'Project Team Leader', color:'t-lime', emoji:'🌾', desc:'Cloud-based data system for the Dept. of Agriculture – MIMAROPA. Supports High-Value Crop Development with real-time monitoring, PDF reports, and geospatial mapping.', tags:['Laravel','Vue.js','Cloud','GIS'], link:'https://github.com/Queenie-De-Guzman/AgrisycSystem.git', linklbl:'View on GitHub →' },
-    { name:'MINOE', yr:'2023–24', role:'Project Team Leader', color:'t-blue', emoji:'📚', desc:'Web-based educational platform for student registration, records, online exams, and academic management for schools.', tags:['PHP','CodeIgniter','Django','Education'], link:'https://github.com/Queenie-De-Guzman/Django_Online_Examinations.git', linklbl:'View on GitHub →' },
-    { name:'Roxas Cares & CMS', yr:'2025', role:'Programmer · QA', color:'t-purple', emoji:'🏛️', desc:'LGU website with CMS — implemented features, bug fixes, and client training for local government operations.', tags:['C#','ASP.NET MVC','MySQL'], link:'https://roxasormin.com/', linklbl:'Visit Live Site →' },
-    { name:'LGUCore & LGUConnect', yr:'2025', role:'Programmer', color:'t-sky', emoji:'🏢', desc:'Web applications for local government units with feedback portals and citizen surveys. Enhanced UI/UX and system features.', tags:['C#','ASP.NET MVC','MySQL'], link:'https://core.itdcsystems.com/Account/Login', linklbl:'Visit Platform →' },
-    { name:'Roxas Emergency Response', yr:'2025', role:'Programmer · QA', color:'t-rose', emoji:'🚨', desc:'Real-time emergency management with incident tracking, team dispatch, and resource coordination for LGU.', tags:['C#','ASP.NET','Real-time'], link:'', linklbl:'Private Deployment →' },
-    { name:'Tourism Website', yr:'2025', role:'Developer', color:'t-teal', emoji:'🏝️', desc:'Interactive tourism and online booking system for Oriental Mindoro showcasing destinations and tour packages.', tags:['C#','ASP.NET','MySQL','Tourism'], link:'https://github.com/Queenie-De-Guzman/Tourism-Website.git', linklbl:'View on GitHub →' },
-    { name:'CHG PROD — Power BI', yr:'2025', role:'Data Analyst', color:'t-amber', emoji:'📊', desc:'Interactive Sales & Inventory Dashboard in Power BI — monitors KPIs, trends, and supports data-driven decisions in real time.', tags:['Power BI','MySQL','SQL Server','Analytics'], link:'', linklbl:'Internal Dashboard →' }
+    { name:'AGRISYNC', yr:'2023–25', role:'Project Team Leader', color:'t-lime', emoji:'🌾', desc:'Cloud-based data system for the Dept. of Agriculture – MIMAROPA.', tags:['Laravel','Vue.js','Cloud','GIS'], link:'https://github.com/Queenie-De-Guzman/AgrisycSystem.git', linklbl:'View on GitHub →' },
+    { name:'MINOE', yr:'2023–24', role:'Project Team Leader', color:'t-blue', emoji:'📚', desc:'Web-based educational platform for student registration and online exams.', tags:['PHP','CodeIgniter','Django','Education'], link:'https://github.com/Queenie-De-Guzman/Django_Online_Examinations.git', linklbl:'View on GitHub →' },
+    { name:'Roxas Cares & CMS', yr:'2025', role:'Programmer · QA', color:'t-purple', emoji:'🏛️', desc:'LGU website with CMS for local government operations.', tags:['C#','ASP.NET MVC','MySQL'], link:'https://roxasormin.com/', linklbl:'Visit Live Site →' },
+    { name:'LGUCore & LGUConnect', yr:'2025', role:'Programmer', color:'t-sky', emoji:'🏢', desc:'Web applications for local government units with feedback portals.', tags:['C#','ASP.NET MVC','MySQL'], link:'https://core.itdcsystems.com/Account/Login', linklbl:'Visit Platform →' },
+    { name:'Roxas Emergency Response', yr:'2025', role:'Programmer · QA', color:'t-rose', emoji:'🚨', desc:'Real-time emergency management system for LGU.', tags:['C#','ASP.NET','Real-time'], link:'', linklbl:'Private Deployment →' },
+    { name:'Tourism Website', yr:'2025', role:'Developer', color:'t-teal', emoji:'🏝️', desc:'Interactive tourism and online booking system for Oriental Mindoro.', tags:['C#','ASP.NET','MySQL','Tourism'], link:'https://github.com/Queenie-De-Guzman/Tourism-Website.git', linklbl:'View on GitHub →' },
+    { name:'CHG PROD — Power BI', yr:'2025', role:'Data Analyst', color:'t-amber', emoji:'📊', desc:'Interactive Sales & Inventory Dashboard in Power BI.', tags:['Power BI','MySQL','SQL Server','Analytics'], link:'', linklbl:'Internal Dashboard →' }
   ],
   experience: [
-    { date:'Feb 17 – May 3, 2025', title:'QA / Programmer Intern', desc:'Bug fixing, system optimization, and improvements for IT systems in a professional environment. Gained deep experience in software testing and QA best practices.' },
-    { date:'November 07, 2025', title:'Guest Speaker — BCRV Tech-Voc INC.', desc:'Invited speaker at the virtual TESDA NCIII Java Programming graduation. Shared real-world software development experience with aspiring programmers.' },
-    { date:'May 30, 2025', title:'10th National Research Conference on IT Education', desc:'Participated in national conference on IT Education innovations. Engaged with industry leaders and researchers on emerging trends.' },
-    { date:'Sep 19 – Oct 8, 2024', title:'Game Dev Intern — OLLOPA Corporation', desc:'120-hour intensive internship in game development — asset creation, storyline development, and game design using industry-standard workflows.' },
-    { date:'Sep 9–12, 2024', title:'HVCDP Planning Workshop — Dept. of Agriculture', desc:'Collaborated on High-Value Crop Development Program interventions and data gathering formats for Mindoro regions.' },
-    { date:'Aug 1 – Sep 16, 2024', title:'JAVA NC III Certification — TESDA', desc:'Comprehensive Java training covering OOP, data structures, file handling, and error management. Certified to build scalable enterprise applications.' }
+    { date:'Feb 17 – May 3, 2025', title:'QA / Programmer Intern', desc:'Bug fixing, system optimization, and improvements for IT systems.' },
+    { date:'November 07, 2025', title:'Guest Speaker — BCRV Tech-Voc INC.', desc:'Invited speaker at the virtual TESDA NCIII Java Programming graduation.' },
+    { date:'May 30, 2025', title:'10th National Research Conference on IT Education', desc:'Participated in national conference on IT Education innovations.' },
+    { date:'Sep 19 – Oct 8, 2024', title:'Game Dev Intern — OLLOPA Corporation', desc:'120-hour intensive internship in game development.' },
+    { date:'Sep 9–12, 2024', title:'HVCDP Planning Workshop — Dept. of Agriculture', desc:'Collaborated on High-Value Crop Development Program interventions.' },
+    { date:'Aug 1 – Sep 16, 2024', title:'JAVA NC III Certification — TESDA', desc:'Comprehensive Java training. Certified to build scalable enterprise applications.' }
   ],
-  contact: {
-    email:'queenievillapando11030713@gmail.com',
-    linkedin:'https://www.linkedin.com/in/queenie-de-guzman-451a08323/',
-    raket:'https://www.raket.ph/mukwini',
-    ig:'https://www.instagram.com/queenievillapando/',
-    github:''
-  },
+  contact: { email:'queenievillapando11030713@gmail.com', linkedin:'https://www.linkedin.com/in/queenie-de-guzman-451a08323/', raket:'https://www.raket.ph/mukwini', ig:'https://www.instagram.com/queenievillapando/', github:'' },
   settings: { user:'admin', pass:'qdg2025', portfolioFile:'queenie-portfolio.html' }
 };
 
-/* ══ STORAGE HELPERS ══ */
-function load(key) {
-  try { return JSON.parse(localStorage.getItem('qdg_'+key)) || DEFAULT[key]; } catch { return DEFAULT[key]; }
-}
-function save(key, val) {
-  localStorage.setItem('qdg_'+key, JSON.stringify(val));
-  flashSaveStatus();
-}
+function load(key) { try { return JSON.parse(localStorage.getItem('qdg_'+key)) || DEFAULT[key]; } catch { return DEFAULT[key]; } }
+function save(key, val) { localStorage.setItem('qdg_'+key, JSON.stringify(val)); flashSaveStatus(); }
 function flashSaveStatus() {
   const el = document.getElementById('saveStatus');
-  el.textContent = '✓ Saved!';
-  el.style.color = 'var(--lime)';
+  el.textContent = '✓ Saved!'; el.style.color = 'var(--lime)';
   setTimeout(() => { el.textContent = '● Auto-saved'; el.style.color = ''; }, 2000);
 }
 
-/* ══ LOGIN ══ */
 function doLogin() {
   const u = document.getElementById('loginUser').value.trim();
   const p = document.getElementById('loginPass').value;
@@ -884,6 +531,7 @@ function doLogin() {
   if (u === s.user && p === s.pass) {
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('adminApp').classList.add('active');
+    sessionStorage.setItem('qdg_authed','1');
     loadAllPanels();
   } else {
     const err = document.getElementById('loginErr');
@@ -894,36 +542,28 @@ function doLogin() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && document.getElementById('loginScreen').style.display !== 'none') doLogin();
 });
-
 function doLogout() {
+  sessionStorage.removeItem('qdg_authed');
   document.getElementById('loginScreen').style.display = '';
   document.getElementById('adminApp').classList.remove('active');
   document.getElementById('loginUser').value = '';
   document.getElementById('loginPass').value = '';
 }
 
-/* ══ PANEL NAVIGATION ══ */
 function showPanel(id, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sb-link').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-'+id).classList.add('active');
   if (btn) btn.classList.add('active');
-  document.getElementById('topbarTitle').textContent = {
-    dashboard:'Dashboard', hero:'Hero Section', about:'About Me',
-    skills:'Skills', projects:'Projects', experience:'Experience & Training',
-    contact:'Contact Info', settings:'Settings'
-  }[id] || id;
+  const titles = { dashboard:'Dashboard', hero:'Hero Section', about:'About Me', skills:'Skills', projects:'Projects', experience:'Experience & Training', contact:'Contact Info', visitors:'Visitor History', settings:'Settings' };
+  document.getElementById('topbarTitle').textContent = titles[id] || id;
+  if (id === 'visitors') loadVisitorPanel();
   closeMobMenu();
 }
 
-function toggleMobMenu() {
-  document.getElementById('sidebar').classList.toggle('mob-open');
-}
-function closeMobMenu() {
-  document.getElementById('sidebar').classList.remove('mob-open');
-}
+function toggleMobMenu() { document.getElementById('sidebar').classList.toggle('mob-open'); }
+function closeMobMenu() { document.getElementById('sidebar').classList.remove('mob-open'); }
 
-/* ══ TOAST ══ */
 function toast(msg, isErr=false) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -932,22 +572,15 @@ function toast(msg, isErr=false) {
   t._tid = setTimeout(() => t.className='', 2800);
 }
 
-/* ══ LOAD ALL PANELS ══ */
 function loadAllPanels() {
   loadHero(); loadAbout(); loadSkillList(); loadProjectList(); loadExpList(); loadContact(); loadSettings();
   updateDashStats();
 }
 
-/* ══ HERO ══ */
+/* ── HERO ── */
 function loadHero() {
   const d = load('hero');
-  Object.keys(d).forEach(k => {
-    const el = document.getElementById('h-'+k) || document.getElementById(k.replace('_','-').replace('stat','stat'));
-    if (el) el.value = d[k];
-  });
-  // manually map
-  const fields = ['firstname','lastname','title','desc','badge','stack','status',
-    'stat1_num','stat1_lbl','stat2_num','stat2_lbl','stat3_num','stat3_lbl'];
+  const fields = ['firstname','lastname','title','desc','badge','stack','status','stat1_num','stat1_lbl','stat2_num','stat2_lbl','stat3_num','stat3_lbl'];
   fields.forEach(f => {
     const id = f.includes('stat') ? f.replace('_','-') : 'h-'+f;
     const el = document.getElementById(id);
@@ -955,68 +588,35 @@ function loadHero() {
   });
 }
 function saveHero() {
-  const fields = ['firstname','lastname','title','desc','badge','stack','status',
-    'stat1_num','stat1_lbl','stat2_num','stat2_lbl','stat3_num','stat3_lbl'];
+  const fields = ['firstname','lastname','title','desc','badge','stack','status','stat1_num','stat1_lbl','stat2_num','stat2_lbl','stat3_num','stat3_lbl'];
   const d = {};
   fields.forEach(f => {
     const id = f.includes('stat') ? f.replace('_','-') : 'h-'+f;
     const el = document.getElementById(id);
     if (el) d[f] = el.value;
   });
-  save('hero', d);
-  toast('✓ Hero section saved!');
+  save('hero', d); toast('✓ Hero section saved!');
 }
 
-/* ══ ABOUT ══ */
+/* ── ABOUT ── */
 function loadAbout() {
   const d = load('about');
-  const map = {
-    'a-location':'location','a-education':'education','a-school':'school',
-    'a-role':'role','a-cert':'cert','a-status':'status',
-    'a-p1':'p1','a-p2':'p2','a-p3':'p3',
-    'hl1-t':'hl1_t','hl1-s':'hl1_s','hl2-t':'hl2_t','hl2-s':'hl2_s',
-    'hl3-t':'hl3_t','hl3-s':'hl3_s','hl4-t':'hl4_t','hl4-s':'hl4_s'
-  };
-  Object.entries(map).forEach(([id, key]) => {
-    const el = document.getElementById(id);
-    if (el) el.value = d[key] ?? '';
-  });
+  const map = { 'a-location':'location','a-education':'education','a-school':'school','a-role':'role','a-cert':'cert','a-status':'status','a-p1':'p1','a-p2':'p2','a-p3':'p3','hl1-t':'hl1_t','hl1-s':'hl1_s','hl2-t':'hl2_t','hl2-s':'hl2_s','hl3-t':'hl3_t','hl3-s':'hl3_s','hl4-t':'hl4_t','hl4-s':'hl4_s' };
+  Object.entries(map).forEach(([id,key]) => { const el=document.getElementById(id); if(el) el.value=d[key]??''; });
 }
 function saveAbout() {
-  const map = {
-    'a-location':'location','a-education':'education','a-school':'school',
-    'a-role':'role','a-cert':'cert','a-status':'status',
-    'a-p1':'p1','a-p2':'p2','a-p3':'p3',
-    'hl1-t':'hl1_t','hl1-s':'hl1_s','hl2-t':'hl2_t','hl2-s':'hl2_s',
-    'hl3-t':'hl3_t','hl3-s':'hl3_s','hl4-t':'hl4_t','hl4-s':'hl4_s'
-  };
+  const map = { 'a-location':'location','a-education':'education','a-school':'school','a-role':'role','a-cert':'cert','a-status':'status','a-p1':'p1','a-p2':'p2','a-p3':'p3','hl1-t':'hl1_t','hl1-s':'hl1_s','hl2-t':'hl2_t','hl2-s':'hl2_s','hl3-t':'hl3_t','hl3-s':'hl3_s','hl4-t':'hl4_t','hl4-s':'hl4_s' };
   const d = {};
-  Object.entries(map).forEach(([id, key]) => {
-    const el = document.getElementById(id);
-    if (el) d[key] = el.value;
-  });
-  save('about', d);
-  toast('✓ About section saved!');
+  Object.entries(map).forEach(([id,key]) => { const el=document.getElementById(id); if(el) d[key]=el.value; });
+  save('about', d); toast('✓ About section saved!');
 }
 
-/* ══ SKILLS ══ */
+/* ── SKILLS ── */
 let skillTags = [];
 function loadSkillList() {
   const skills = load('skills');
   const list = document.getElementById('skillList');
-  list.innerHTML = '';
-  skills.forEach((sk, i) => {
-    list.innerHTML += `
-      <div class="item-card">
-        <div class="item-info">
-          <div class="item-name">${sk.ico} ${sk.name}</div>
-          <div class="item-meta">${sk.tags.join(' · ')}</div>
-        </div>
-        <div class="item-actions">
-          <button class="edit-btn" onclick="openSkillModal(${i})">✏️ Edit</button>
-        </div>
-      </div>`;
-  });
+  list.innerHTML = skills.map((sk,i) => `<div class="item-card"><div class="item-info"><div class="item-name">${sk.ico} ${sk.name}</div><div class="item-meta">${sk.tags.join(' · ')}</div></div><div class="item-actions"><button class="edit-btn" onclick="openSkillModal(${i})">✏️ Edit</button></div></div>`).join('');
 }
 function openSkillModal(idx) {
   const skills = load('skills');
@@ -1024,7 +624,7 @@ function openSkillModal(idx) {
   document.getElementById('skillModalTitle').textContent = isNew ? 'Add Skill Group' : 'Edit Skill Group';
   document.getElementById('skill-idx').value = idx;
   document.getElementById('skillDeleteBtn').style.display = isNew ? 'none' : '';
-  const sk = isNew ? { ico:'', name:'', tags:[] } : skills[idx];
+  const sk = isNew ? {ico:'',name:'',tags:[]} : skills[idx];
   document.getElementById('sk-ico').value = sk.ico;
   document.getElementById('sk-name').value = sk.name;
   skillTags = [...sk.tags];
@@ -1034,60 +634,32 @@ function openSkillModal(idx) {
 function saveSkillModal() {
   const idx = parseInt(document.getElementById('skill-idx').value);
   const skills = load('skills');
-  const sk = { ico: document.getElementById('sk-ico').value, name: document.getElementById('sk-name').value, tags: skillTags };
-  if (idx === -1) skills.push(sk); else skills[idx] = sk;
-  save('skills', skills);
-  closeModal('skillModal');
-  loadSkillList();
-  updateDashStats();
-  toast('✓ Skill group saved!');
+  const sk = { ico:document.getElementById('sk-ico').value, name:document.getElementById('sk-name').value, tags:skillTags };
+  if (idx===-1) skills.push(sk); else skills[idx]=sk;
+  save('skills',skills); closeModal('skillModal'); loadSkillList(); updateDashStats(); toast('✓ Skill group saved!');
 }
 function deleteSkill() {
   if (!confirm('Delete this skill group?')) return;
   const idx = parseInt(document.getElementById('skill-idx').value);
-  const skills = load('skills');
-  skills.splice(idx, 1);
-  save('skills', skills);
-  closeModal('skillModal');
-  loadSkillList();
-  updateDashStats();
-  toast('🗑️ Skill group deleted');
+  const skills = load('skills'); skills.splice(idx,1);
+  save('skills',skills); closeModal('skillModal'); loadSkillList(); updateDashStats(); toast('🗑️ Deleted');
 }
 
-/* ══ PROJECTS ══ */
+/* ── PROJECTS ── */
 let projTags = [];
 function loadProjectList() {
   const projects = load('projects');
   const list = document.getElementById('projectList');
-  list.innerHTML = '';
-  projects.forEach((pj, i) => {
-    list.innerHTML += `
-      <div class="item-card">
-        <div class="item-info">
-          <div class="item-name">${pj.emoji} ${pj.name} <span style="color:var(--lime);font-size:0.72rem;font-weight:600;margin-left:0.4rem;">${pj.yr}</span></div>
-          <div class="item-meta">${pj.role} · ${pj.tags.join(', ')}</div>
-        </div>
-        <div class="item-actions">
-          <button class="edit-btn" onclick="openProjectModal(${i})">✏️ Edit</button>
-        </div>
-      </div>`;
-  });
+  list.innerHTML = projects.map((pj,i) => `<div class="item-card"><div class="item-info"><div class="item-name">${pj.emoji} ${pj.name} <span style="color:var(--lime);font-size:0.72rem;margin-left:0.4rem;">${pj.yr}</span></div><div class="item-meta">${pj.role} · ${pj.tags.join(', ')}</div></div><div class="item-actions"><button class="edit-btn" onclick="openProjectModal(${i})">✏️ Edit</button></div></div>`).join('');
 }
 function openProjectModal(idx) {
   const projects = load('projects');
-  const isNew = idx === -1;
+  const isNew = idx===-1;
   document.getElementById('projModalTitle').textContent = isNew ? 'Add Project' : 'Edit Project';
   document.getElementById('proj-idx').value = idx;
   document.getElementById('projDeleteBtn').style.display = isNew ? 'none' : '';
-  const pj = isNew ? { name:'', yr:'', role:'', color:'t-lime', emoji:'🚀', desc:'', tags:[], link:'', linklbl:'' } : projects[idx];
-  document.getElementById('pj-name').value = pj.name;
-  document.getElementById('pj-yr').value = pj.yr;
-  document.getElementById('pj-role').value = pj.role;
-  document.getElementById('pj-color').value = pj.color;
-  document.getElementById('pj-emoji').value = pj.emoji;
-  document.getElementById('pj-desc').value = pj.desc;
-  document.getElementById('pj-link').value = pj.link;
-  document.getElementById('pj-linklbl').value = pj.linklbl;
+  const pj = isNew ? {name:'',yr:'',role:'',color:'t-lime',emoji:'🚀',desc:'',tags:[],link:'',linklbl:''} : projects[idx];
+  ['name','yr','role','color','emoji','desc','link','linklbl'].forEach(k => { const el=document.getElementById('pj-'+k); if(el) el.value=pj[k]; });
   projTags = [...pj.tags];
   renderTagEditor('projTagEditor', projTags, 'projTags');
   openModal('projectModal');
@@ -1095,114 +667,58 @@ function openProjectModal(idx) {
 function saveProjModal() {
   const idx = parseInt(document.getElementById('proj-idx').value);
   const projects = load('projects');
-  const pj = {
-    name: document.getElementById('pj-name').value,
-    yr: document.getElementById('pj-yr').value,
-    role: document.getElementById('pj-role').value,
-    color: document.getElementById('pj-color').value,
-    emoji: document.getElementById('pj-emoji').value,
-    desc: document.getElementById('pj-desc').value,
-    tags: projTags,
-    link: document.getElementById('pj-link').value,
-    linklbl: document.getElementById('pj-linklbl').value
-  };
-  if (idx === -1) projects.push(pj); else projects[idx] = pj;
-  save('projects', projects);
-  closeModal('projectModal');
-  loadProjectList();
-  updateDashStats();
-  toast('✓ Project saved!');
+  const pj = { name:document.getElementById('pj-name').value, yr:document.getElementById('pj-yr').value, role:document.getElementById('pj-role').value, color:document.getElementById('pj-color').value, emoji:document.getElementById('pj-emoji').value, desc:document.getElementById('pj-desc').value, tags:projTags, link:document.getElementById('pj-link').value, linklbl:document.getElementById('pj-linklbl').value };
+  if (idx===-1) projects.push(pj); else projects[idx]=pj;
+  save('projects',projects); closeModal('projectModal'); loadProjectList(); updateDashStats(); toast('✓ Project saved!');
 }
 function deleteProject() {
   if (!confirm('Delete this project?')) return;
   const idx = parseInt(document.getElementById('proj-idx').value);
-  const projects = load('projects');
-  projects.splice(idx, 1);
-  save('projects', projects);
-  closeModal('projectModal');
-  loadProjectList();
-  updateDashStats();
-  toast('🗑️ Project deleted');
+  const projects = load('projects'); projects.splice(idx,1);
+  save('projects',projects); closeModal('projectModal'); loadProjectList(); updateDashStats(); toast('🗑️ Deleted');
 }
 
-/* ══ EXPERIENCE ══ */
+/* ── EXPERIENCE ── */
 function loadExpList() {
   const exps = load('experience');
   const list = document.getElementById('expList');
-  list.innerHTML = '';
-  exps.forEach((ex, i) => {
-    list.innerHTML += `
-      <div class="item-card">
-        <div class="item-info">
-          <div class="item-name">${ex.title}</div>
-          <div class="item-meta">${ex.date}</div>
-        </div>
-        <div class="item-actions">
-          <button class="edit-btn" onclick="openExpModal(${i})">✏️ Edit</button>
-        </div>
-      </div>`;
-  });
+  list.innerHTML = exps.map((ex,i) => `<div class="item-card"><div class="item-info"><div class="item-name">${ex.title}</div><div class="item-meta">${ex.date}</div></div><div class="item-actions"><button class="edit-btn" onclick="openExpModal(${i})">✏️ Edit</button></div></div>`).join('');
 }
 function openExpModal(idx) {
   const exps = load('experience');
-  const isNew = idx === -1;
+  const isNew = idx===-1;
   document.getElementById('expModalTitle').textContent = isNew ? 'Add Experience' : 'Edit Experience';
   document.getElementById('exp-idx').value = idx;
   document.getElementById('expDeleteBtn').style.display = isNew ? 'none' : '';
-  const ex = isNew ? { date:'', title:'', desc:'' } : exps[idx];
-  document.getElementById('ex-date').value = ex.date;
-  document.getElementById('ex-title').value = ex.title;
-  document.getElementById('ex-desc').value = ex.desc;
+  const ex = isNew ? {date:'',title:'',desc:''} : exps[idx];
+  document.getElementById('ex-date').value=ex.date; document.getElementById('ex-title').value=ex.title; document.getElementById('ex-desc').value=ex.desc;
   openModal('expModal');
 }
 function saveExpModal() {
   const idx = parseInt(document.getElementById('exp-idx').value);
   const exps = load('experience');
-  const ex = {
-    date: document.getElementById('ex-date').value,
-    title: document.getElementById('ex-title').value,
-    desc: document.getElementById('ex-desc').value
-  };
-  if (idx === -1) exps.push(ex); else exps[idx] = ex;
-  save('experience', exps);
-  closeModal('expModal');
-  loadExpList();
-  updateDashStats();
-  toast('✓ Experience saved!');
+  const ex = { date:document.getElementById('ex-date').value, title:document.getElementById('ex-title').value, desc:document.getElementById('ex-desc').value };
+  if (idx===-1) exps.push(ex); else exps[idx]=ex;
+  save('experience',exps); closeModal('expModal'); loadExpList(); updateDashStats(); toast('✓ Saved!');
 }
 function deleteExp() {
   if (!confirm('Delete this entry?')) return;
   const idx = parseInt(document.getElementById('exp-idx').value);
-  const exps = load('experience');
-  exps.splice(idx, 1);
-  save('experience', exps);
-  closeModal('expModal');
-  loadExpList();
-  updateDashStats();
-  toast('🗑️ Entry deleted');
+  const exps = load('experience'); exps.splice(idx,1);
+  save('experience',exps); closeModal('expModal'); loadExpList(); updateDashStats(); toast('🗑️ Deleted');
 }
 
-/* ══ CONTACT ══ */
+/* ── CONTACT ── */
 function loadContact() {
   const d = load('contact');
-  document.getElementById('c-email').value = d.email ?? '';
-  document.getElementById('c-linkedin').value = d.linkedin ?? '';
-  document.getElementById('c-raket').value = d.raket ?? '';
-  document.getElementById('c-ig').value = d.ig ?? '';
-  document.getElementById('c-github').value = d.github ?? '';
+  ['email','linkedin','raket','ig','github'].forEach(k => { const el=document.getElementById('c-'+k); if(el) el.value=d[k]??''; });
 }
 function saveContact() {
-  save('contact', {
-    email: document.getElementById('c-email').value,
-    linkedin: document.getElementById('c-linkedin').value,
-    raket: document.getElementById('c-raket').value,
-    ig: document.getElementById('c-ig').value,
-    github: document.getElementById('c-github').value
-  });
+  save('contact', { email:document.getElementById('c-email').value, linkedin:document.getElementById('c-linkedin').value, raket:document.getElementById('c-raket').value, ig:document.getElementById('c-ig').value, github:document.getElementById('c-github').value });
   toast('✓ Contact info saved!');
 }
 
-/* ══ SETTINGS ══ */
+/* ── SETTINGS ── */
 function loadSettings() {
   const d = load('settings');
   document.getElementById('s-user').value = d.user ?? 'admin';
@@ -1210,18 +726,81 @@ function loadSettings() {
 }
 function saveSettings() {
   const s = load('settings');
-  const newUser = document.getElementById('s-user').value.trim() || s.user;
-  const newPass = document.getElementById('s-pass').value || s.pass;
-  save('settings', { user: newUser, pass: newPass, portfolioFile: document.getElementById('s-portfolioFile').value });
+  const pf = document.getElementById('s-portfolioFile').value;
+  save('settings', { user: document.getElementById('s-user').value.trim()||s.user, pass: document.getElementById('s-pass').value||s.pass, portfolioFile: pf });
   document.getElementById('s-pass').value = '';
+  /* Update preview link */
+  document.querySelector('.preview-link').href = pf || 'queenie-portfolio.html';
   toast('✓ Settings saved!');
 }
 
-/* ══ TAG EDITOR ══ */
+/* ── VISITOR HISTORY PANEL ── */
+function countryFlag(code) {
+  if (!code || code.length !== 2) return '🌐';
+  return String.fromCodePoint(...[...code.toUpperCase()].map(c => 127397 + c.charCodeAt(0)));
+}
+function fmtTime(iso) {
+  return new Date(iso).toLocaleString('en-PH', { month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit' });
+}
+function loadVisitorPanel() {
+  const history = JSON.parse(localStorage.getItem('qdg_visit_history') || '[]');
+  const totalLocal = parseInt(localStorage.getItem('qdg_total_views') || '0');
+  const countries = [...new Set(history.map(h => h.country).filter(c => c && c !== 'Unknown'))];
+
+  /* Stats */
+  document.getElementById('visitorStats').innerHTML = `
+    <div class="stat-card"><div class="stat-card-num">${history.length}</div><div class="stat-card-lbl">Visits Logged</div></div>
+    <div class="stat-card"><div class="stat-card-num">${countries.length || '—'}</div><div class="stat-card-lbl">Countries</div></div>
+    <div class="stat-card"><div class="stat-card-num">${totalLocal || '—'}</div><div class="stat-card-lbl">Local Count</div></div>`;
+
+  /* Country cloud */
+  const countryCloud = document.getElementById('countryCloud');
+  if (countries.length) {
+    const counts = {};
+    history.forEach(h => { if (h.country && h.country !== 'Unknown') counts[h.country] = (counts[h.country]||0)+1; });
+    countryCloud.innerHTML = Object.entries(counts)
+      .sort((a,b) => b[1]-a[1])
+      .map(([c,n]) => {
+        const code = history.find(h => h.country===c)?.countryCode || '';
+        return `<span class="country-chip">${countryFlag(code)} ${c} <strong style="color:var(--lime);margin-left:0.2rem;">${n}</strong></span>`;
+      }).join('');
+  } else {
+    countryCloud.innerHTML = '<span style="color:var(--muted);font-size:0.82rem;">Wala pang data. Bisitahin ang portfolio para magsimula.</span>';
+  }
+
+  /* List */
+  const listEl = document.getElementById('visitorList');
+  if (!history.length) {
+    listEl.innerHTML = '<div class="vis-empty">Wala pang bisita na nai-log.<br>I-open ang portfolio at mag-refresh!</div>';
+    return;
+  }
+  listEl.innerHTML = history.slice(0,100).map((h,i) => `
+    <div class="vis-entry">
+      <div class="vis-flag">${countryFlag(h.countryCode)}</div>
+      <div class="vis-info">
+        <div class="vis-loc">${h.city}${h.country && h.country !== 'Unknown' ? ', ' + h.country : ''}</div>
+        <div class="vis-time">${fmtTime(h.ts)}${h.ip ? ' · ' + h.ip : ''}</div>
+      </div>
+      ${i===0 ? '<span class="vis-badge-new">LATEST</span>' : ''}
+    </div>`).join('');
+
+  /* Update dash views */
+  document.getElementById('dash-views').textContent = totalLocal || history.length || '—';
+}
+function clearVisitorHistory() {
+  if (!confirm('Clear all visitor history? Hindi na ito mabawi.')) return;
+  localStorage.removeItem('qdg_visit_history');
+  localStorage.removeItem('qdg_total_views');
+  loadVisitorPanel();
+  updateDashStats();
+  toast('🗑️ Visitor history cleared');
+}
+
+/* ── TAG EDITOR ── */
 function renderTagEditor(containerId, tagsArr, varName) {
   const container = document.getElementById(containerId);
   container.innerHTML = '';
-  tagsArr.forEach((tag, i) => {
+  tagsArr.forEach((tag,i) => {
     const chip = document.createElement('span');
     chip.className = 'tag-chip';
     chip.innerHTML = `${tag} <button onclick="removeTag('${containerId}','${varName}',${i})" title="Remove">✕</button>`;
@@ -1229,79 +808,72 @@ function renderTagEditor(containerId, tagsArr, varName) {
   });
 }
 function removeTag(containerId, varName, idx) {
-  if (varName === 'skillTags') skillTags.splice(idx, 1), renderTagEditor(containerId, skillTags, varName);
-  if (varName === 'projTags') projTags.splice(idx, 1), renderTagEditor(containerId, projTags, varName);
+  if (varName==='skillTags') { skillTags.splice(idx,1); renderTagEditor(containerId,skillTags,varName); }
+  if (varName==='projTags') { projTags.splice(idx,1); renderTagEditor(containerId,projTags,varName); }
 }
 function addTag(e, containerId, inputId) {
-  if (e.key !== 'Enter' && e.key !== ',') return;
+  if (e.key!=='Enter' && e.key!==',') return;
   e.preventDefault();
   const input = document.getElementById(inputId);
   const val = input.value.trim().replace(/,/g,'');
   if (!val) return;
-  if (containerId === 'skillTagEditor') { skillTags.push(val); renderTagEditor(containerId, skillTags, 'skillTags'); }
-  if (containerId === 'projTagEditor') { projTags.push(val); renderTagEditor(containerId, projTags, 'projTags'); }
+  if (containerId==='skillTagEditor') { skillTags.push(val); renderTagEditor(containerId,skillTags,'skillTags'); }
+  if (containerId==='projTagEditor') { projTags.push(val); renderTagEditor(containerId,projTags,'projTags'); }
   input.value = '';
 }
 
-/* ══ MODALS ══ */
+/* ── MODALS ── */
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 document.querySelectorAll('.modal-overlay').forEach(o => {
-  o.addEventListener('click', e => { if (e.target === o) o.classList.remove('open'); });
+  o.addEventListener('click', e => { if (e.target===o) o.classList.remove('open'); });
 });
 
-/* ══ DASH STATS ══ */
+/* ── DASH STATS ── */
 function updateDashStats() {
   document.getElementById('dash-proj').textContent = load('projects').length;
   document.getElementById('dash-exp').textContent = load('experience').length;
   document.getElementById('dash-skills').textContent = load('skills').length;
+  const total = parseInt(localStorage.getItem('qdg_total_views') || '0');
+  const hist = JSON.parse(localStorage.getItem('qdg_visit_history') || '[]');
+  document.getElementById('dash-views').textContent = total || hist.length || '—';
 }
 
-/* ══ EXPORT / IMPORT / RESET ══ */
+/* ── EXPORT/IMPORT/RESET ── */
 function exportData() {
   const all = {};
-  ['hero','about','skills','projects','experience','contact'].forEach(k => all[k] = load(k));
-  const blob = new Blob([JSON.stringify(all, null, 2)], { type:'application/json' });
+  ['hero','about','skills','projects','experience','contact'].forEach(k => all[k]=load(k));
+  const blob = new Blob([JSON.stringify(all,null,2)], {type:'application/json'});
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'qdg-portfolio-data.json';
-  a.click();
+  a.href = URL.createObjectURL(blob); a.download = 'qdg-portfolio-data.json'; a.click();
   toast('✓ Data exported!');
 }
 function importData(e) {
-  const file = e.target.files[0];
-  if (!file) return;
+  const file = e.target.files[0]; if (!file) return;
   const reader = new FileReader();
   reader.onload = ev => {
     try {
       const data = JSON.parse(ev.target.result);
-      Object.keys(data).forEach(k => {
-        if (DEFAULT[k] !== undefined) localStorage.setItem('qdg_'+k, JSON.stringify(data[k]));
-      });
-      loadAllPanels();
-      toast('✓ Data imported successfully!');
+      Object.keys(data).forEach(k => { if (DEFAULT[k]!==undefined) localStorage.setItem('qdg_'+k,JSON.stringify(data[k])); });
+      loadAllPanels(); toast('✓ Data imported!');
     } catch { toast('⚠️ Invalid JSON file', true); }
   };
-  reader.readAsText(file);
-  e.target.value = '';
+  reader.readAsText(file); e.target.value='';
 }
 function resetData() {
-  if (!confirm('Reset ALL data to defaults? This cannot be undone.')) return;
+  if (!confirm('Reset ALL data to defaults?')) return;
   Object.keys(DEFAULT).forEach(k => localStorage.removeItem('qdg_'+k));
-  loadAllPanels();
-  toast('✓ Reset to defaults');
+  loadAllPanels(); toast('✓ Reset to defaults');
 }
 
-/* ══ INIT ══ */
+/* ── INIT ── */
 window.onload = () => {
-  // Auto-login check (session flag)
-  if (sessionStorage.getItem('qdg_authed') === '1') {
+  if (sessionStorage.getItem('qdg_authed')==='1') {
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('adminApp').classList.add('active');
     loadAllPanels();
   }
 };
-// Keep session alive
 document.getElementById('adminApp').addEventListener('click', () => sessionStorage.setItem('qdg_authed','1'));
 </script>
 </body>
