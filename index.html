@@ -40,6 +40,67 @@
     ::-webkit-scrollbar-track { background: var(--ink); }
     ::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 2px; }
 
+    /* ══ VISIT COUNTER WIDGET ══ */
+    #visitWidget {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(24, 24, 36, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(200, 240, 96, 0.22);
+      border-radius: 100px;
+      padding: 0.55rem 1rem 0.55rem 0.75rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 20px rgba(200,240,96,0.08);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      cursor: default;
+      user-select: none;
+    }
+    #visitWidget.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #visitWidget:hover {
+      border-color: rgba(200, 240, 96, 0.45);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 0 30px rgba(200,240,96,0.15);
+    }
+    .vw-pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 8px var(--lime);
+      flex-shrink: 0;
+      animation: vpulse 2s infinite;
+    }
+    @keyframes vpulse {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+    .vw-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+    .vw-count {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--lime);
+      min-width: 20px;
+      text-align: center;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .vw-count.pop {
+      transform: scale(1.4);
+    }
+
     /* ══ NAV ══ */
     #navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -429,7 +490,6 @@
       .ham { display:flex; }
       #mobileMenu { display:flex; }
 
-      /* Hero */
       #home { padding: 72px 1.1rem 2.5rem; justify-content: flex-start; padding-top: 82px; }
       .hero-wrap { grid-template-columns:1fr; gap:1.75rem; }
       .hero-right { order:2; }
@@ -453,11 +513,9 @@
 
       .term-body { padding:1rem; font-size:0.75rem; line-height:1.65; }
 
-      /* Sections */
       .sec { padding:3.5rem 1.1rem; }
       .sec-alt > .sec { padding:3.5rem 1.1rem; }
 
-      /* About */
       .about-grid { margin-top:2rem; gap:1.5rem; }
       .pcard-body { padding:2.2rem 1rem 1.25rem; }
       .pcard-name { font-size:1rem; }
@@ -472,14 +530,12 @@
       .hl-box strong { font-size:0.82rem; }
       .hl-box span { font-size:0.71rem; }
 
-      /* Skills — 2 col on mobile */
       .skills-grid { grid-template-columns:1fr 1fr; gap:0.85rem; margin-top:2rem; }
       .skcard { padding:1.1rem; }
       .sk-ico { font-size:1.4rem; margin-bottom:0.6rem; }
       .skcard h3 { font-size:0.8rem; margin-bottom:0.6rem; }
       .tag { font-size:0.68rem; padding:0.22rem 0.5rem; }
 
-      /* Projects — 1 col on mobile */
       .proj-grid { grid-template-columns:1fr; gap:1rem; margin-top:2rem; }
       .pj-thumb { height:115px; font-size:2.5rem; }
       .pj-body { padding:1.1rem; gap:0.4rem; }
@@ -487,7 +543,6 @@
       .pj-desc { font-size:0.8rem; }
       .pj-yr { font-size:0.65rem; }
 
-      /* Timeline */
       .timeline { padding-left:2rem; margin-top:2rem; }
       .timeline::before { left:6px; }
       .tl { padding:1rem; margin-bottom:1rem; border-radius:12px; }
@@ -496,7 +551,6 @@
       .tl-title { font-size:0.87rem; margin-bottom:0.35rem; }
       .tl-desc { font-size:0.79rem; }
 
-      /* Contact */
       .clinks { grid-template-columns:1fr 1fr; gap:0.7rem; margin-top:2rem; }
       .clink { padding:0.9rem; flex-direction:column; align-items:flex-start; gap:0.5rem; }
       .clink-ico { width:36px; height:36px; font-size:1.05rem; border-radius:9px; }
@@ -506,8 +560,11 @@
       .cform { padding:1.25rem; margin-top:1.5rem; border-radius:14px; }
       .cform-title { font-size:1rem; margin-bottom:1.1rem; }
       .frow { grid-template-columns:1fr; gap:0; }
-      /* CRITICAL: prevents iOS auto-zoom on input focus */
       .field input, .field textarea { font-size:16px; padding:0.75rem 0.85rem; }
+
+      #visitWidget { bottom:1rem; right:1rem; padding:0.45rem 0.85rem 0.45rem 0.65rem; }
+      .vw-label { font-size:0.67rem; }
+      .vw-count { font-size:0.82rem; }
     }
 
     /* ══════════ SMALL PHONE ≤ 400px ══════════ */
@@ -532,6 +589,13 @@
   </style>
 </head>
 <body>
+
+<!-- VISIT COUNTER WIDGET -->
+<div id="visitWidget">
+  <div class="vw-pulse"></div>
+  <span class="vw-label">Total Views</span>
+  <span class="vw-count" id="vwCount">—</span>
+</div>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -845,7 +909,53 @@
 </footer>
 
 <script>
-  /* NAV */
+  /* ══ VISIT COUNTER ══
+   * Uses CountAPI (free, no auth needed) to track real visits across browsers.
+   * Namespace: queenie-portfolio | Key: page-views
+   * Falls back gracefully if the API is unreachable.
+   */
+  (async function initVisitCounter() {
+    const widget   = document.getElementById('visitWidget');
+    const countEl  = document.getElementById('vwCount');
+    const NAMESPACE = 'queenie-deguzman-portfolio';
+    const KEY       = 'page-views';
+    const API_URL   = `https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`;
+
+    try {
+      const res  = await fetch(API_URL);
+      const data = await res.json();
+      const val  = data.value ?? 0;
+
+      // Animate count up from 0
+      animateCount(countEl, 0, val, 900);
+
+      // Show the widget with a pop animation on the number
+      setTimeout(() => {
+        widget.classList.add('visible');
+        countEl.classList.add('pop');
+        setTimeout(() => countEl.classList.remove('pop'), 350);
+      }, 600);
+
+    } catch {
+      // If API fails, still show widget with a placeholder
+      countEl.textContent = '—';
+      widget.classList.add('visible');
+    }
+  })();
+
+  function animateCount(el, from, to, duration) {
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(from + (to - from) * eased).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ══ NAV ══ */
   const ham = document.getElementById('ham');
   const mob = document.getElementById('mobileMenu');
   const nav = document.getElementById('navbar');
@@ -882,6 +992,152 @@
   }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.rv').forEach(el => ro.observe(el));
 
+  /* ══ ADMIN DATA LOADER ══
+   * Reads data saved from admin.html (same localStorage, same origin).
+   * Falls back gracefully to static HTML if no admin data exists.
+   */
+  (function applyAdminData() {
+    function ld(k) { try { return JSON.parse(localStorage.getItem('qdg_'+k)); } catch { return null; } }
+    function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+    // ── HERO ──
+    const hero = ld('hero');
+    if (hero) {
+      const nm = document.querySelector('.hero-name');
+      if (nm) nm.innerHTML = `${esc(hero.firstname)}<br>${esc(hero.lastname)}<br><em>${esc(hero.title)}</em>`;
+      const desc = document.querySelector('.hero-desc');
+      if (desc) desc.textContent = hero.desc || '';
+      const badge = document.querySelector('.badge');
+      if (badge) { const dot = badge.querySelector('.badge-dot'); badge.textContent = hero.badge || ''; if(dot) badge.prepend(dot); }
+      const nums = document.querySelectorAll('.stat-num');
+      const lbls = document.querySelectorAll('.stat-lbl');
+      if (nums[0]) nums[0].textContent = hero.stat1_num;
+      if (lbls[0]) lbls[0].textContent = hero.stat1_lbl;
+      if (nums[1]) nums[1].textContent = hero.stat2_num;
+      if (lbls[1]) lbls[1].textContent = hero.stat2_lbl;
+      if (nums[2]) nums[2].textContent = hero.stat3_num;
+      if (lbls[2]) lbls[2].textContent = hero.stat3_lbl;
+      // terminal
+      const tb = document.querySelector('.term-body');
+      if (tb && hero.stack) {
+        const stackArr = hero.stack.split(',').map(s=>s.trim());
+        const stackHTML = stackArr.map((s,i) => `<span class="ts">'${esc(s)}'</span>${i<stackArr.length-1?', ':''}`).join('');
+        tb.innerHTML = `
+          <div><span class="tc">// Building the future, one commit at a time</span></div>
+          <div>&nbsp;</div>
+          <div><span class="tk">const</span> <span class="tf">engineer</span> = {</div>
+          <div>&nbsp;&nbsp;name: <span class="ts">'${esc(hero.firstname)} ${esc(hero.lastname)}'</span>,</div>
+          <div>&nbsp;&nbsp;role: <span class="ts">'${esc(hero.title)}'</span>,</div>
+          <div>&nbsp;&nbsp;stack: [${stackHTML}],</div>
+          <div>&nbsp;&nbsp;status: <span class="ts">'${esc(hero.status)}'</span></div>
+          <div>};</div>
+          <div>&nbsp;</div>
+          <div><span style="color:var(--lime)">▌</span></div>`;
+      }
+    }
+
+    // ── ABOUT ──
+    const ab = ld('about');
+    if (ab) {
+      const infoVals = document.querySelectorAll('.info-val');
+      const infoLbls = document.querySelectorAll('.info-lbl');
+      const abMap = [
+        [ab.location,'Location'],[ab.education,ab.school],
+        [ab.role,'Current Role'],[ab.cert,'TESDA Certified'],[ab.status,'Status']
+      ];
+      abMap.forEach(([val,lbl],i) => {
+        if (infoVals[i]) infoVals[i].textContent = val||'';
+        if (infoLbls[i] && lbl) infoLbls[i].textContent = lbl;
+      });
+      const ps = document.querySelectorAll('.about-text p');
+      if (ps[0]) ps[0].textContent = ab.p1||'';
+      if (ps[1]) ps[1].textContent = ab.p2||'';
+      if (ps[2]) ps[2].textContent = ab.p3||'';
+      const hls = document.querySelectorAll('.hl-box');
+      const hlData = [[ab.hl1_t,ab.hl1_s],[ab.hl2_t,ab.hl2_s],[ab.hl3_t,ab.hl3_s],[ab.hl4_t,ab.hl4_s]];
+      hls.forEach((box,i) => {
+        if (!hlData[i]) return;
+        const strong = box.querySelector('strong'); const span = box.querySelector('span');
+        if (strong) strong.textContent = hlData[i][0]||'';
+        if (span) span.textContent = hlData[i][1]||'';
+      });
+    }
+
+    // ── SKILLS ──
+    const skills = ld('skills');
+    if (skills && skills.length) {
+      const grid = document.querySelector('.skills-grid');
+      if (grid) {
+        grid.innerHTML = skills.map((sk,i) => `
+          <div class="skcard rv${i%3===1?' d1':i%3===2?' d2':''}">
+            <div class="sk-ico">${esc(sk.ico)}</div>
+            <h3>${esc(sk.name)}</h3>
+            <div class="tags">${sk.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+          </div>`).join('');
+      }
+    }
+
+    // ── PROJECTS ──
+    const projects = ld('projects');
+    if (projects && projects.length) {
+      const grid = document.querySelector('.proj-grid');
+      if (grid) {
+        grid.innerHTML = projects.map((pj,i) => {
+          const linkHtml = pj.link
+            ? `<a href="${esc(pj.link)}" target="_blank" class="pj-link">${esc(pj.linklbl||'View →')}</a>`
+            : `<span class="pj-link dim">${esc(pj.linklbl||'Private →')}</span>`;
+          return `
+            <div class="pj rv${i%3===1?' d1':i%3===2?' d2':''}">
+              <div class="pj-thumb ${esc(pj.color)}">${esc(pj.emoji)}</div>
+              <div class="pj-body">
+                <div class="pj-top"><div class="pj-name">${esc(pj.name)}</div><div class="pj-yr">${esc(pj.yr)}</div></div>
+                <div class="pj-role">${esc(pj.role)}</div>
+                <p class="pj-desc">${esc(pj.desc)}</p>
+                <div class="pj-tags">${pj.tags.map(t=>`<span class="ptag">${esc(t)}</span>`).join('')}</div>
+                ${linkHtml}
+              </div>
+            </div>`;
+        }).join('');
+        // Re-observe new elements
+        document.querySelectorAll('.rv').forEach(el => { el.classList.remove('in'); ro.observe(el); });
+      }
+    }
+
+    // ── EXPERIENCE ──
+    const exps = ld('experience');
+    if (exps && exps.length) {
+      const tl = document.querySelector('.timeline');
+      if (tl) {
+        tl.innerHTML = exps.map((ex,i) => `
+          <div class="tl rv${i%3===1?' d1':i%3===2?' d2':''}">
+            <div class="tl-date">${esc(ex.date)}</div>
+            <div class="tl-title">${esc(ex.title)}</div>
+            <p class="tl-desc">${esc(ex.desc)}</p>
+          </div>`).join('');
+        document.querySelectorAll('.rv').forEach(el => { if (!el.classList.contains('in')) ro.observe(el); });
+      }
+    }
+
+    // ── CONTACT ──
+    const ct = ld('contact');
+    if (ct) {
+      const mailto = document.querySelector('a[href^="mailto:"]');
+      if (mailto && ct.email) mailto.href = 'mailto:'+ct.email;
+      const clinks = document.querySelectorAll('.clink');
+      clinks.forEach(cl => {
+        const nameEl = cl.querySelector('.clink-name');
+        if (!nameEl) return;
+        const n = nameEl.textContent.trim();
+        if (n==='LinkedIn' && ct.linkedin) cl.href = ct.linkedin;
+        if (n==='Instagram' && ct.ig) cl.href = ct.ig;
+        if ((n==='Raket.ph') && ct.raket) cl.href = ct.raket;
+        if (n==='Email' && ct.email) cl.href = 'mailto:'+ct.email;
+      });
+      // Update form submit email
+      if (ct.email) window._adminEmail = ct.email;
+    }
+  })();
+
   /* Contact form */
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -897,7 +1153,8 @@
     fd.append('_captcha', 'false');
 
     try {
-      const r = await fetch('https://formsubmit.co/queenievillapando11030713@gmail.com', {
+      const _email = window._adminEmail || 'queenievillapando11030713@gmail.com';
+      const r = await fetch('https://formsubmit.co/' + _email, {
         method: 'POST', body: fd, headers: { Accept: 'application/json' }
       });
       if (r.ok) {
@@ -907,7 +1164,8 @@
     } catch {
       const n=document.getElementById('fn').value, em=document.getElementById('fe').value,
             s=document.getElementById('fs').value,  m=document.getElementById('fm').value;
-      window.location.href = `mailto:queenievillapando11030713@gmail.com?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(`Name: ${n}\nEmail: ${em}\n\n${m}`)}`;
+      const _em2 = window._adminEmail || 'queenievillapando11030713@gmail.com';
+      window.location.href = `mailto:${_em2}?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(`Name: ${n}\nEmail: ${em}\n\n${m}`)}`;
       st.textContent = '✓ Opening your email client…';
       st.className = 'fstatus ok'; st.style.display = 'block';
     } finally {
