@@ -9,26 +9,14 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --ink:     #08080e;
-      --ink2:    #10101a;
-      --surface: #181824;
-      --surf2:   #202030;
-      --lime:    #c8f060;
-      --lime2:   #a8d040;
-      --sky:     #67e8f9;
-      --lilac:   #a78bfa;
-      --rose:    #fb7185;
-      --amber:   #fbbf24;
-      --green:   #86efac;
-      --text:    #ebebf5;
-      --muted:   #8888a8;
-      --border:  rgba(255,255,255,0.07);
-      --border2: rgba(255,255,255,0.12);
+      --ink:     #08080e; --ink2:    #10101a; --surface: #181824; --surf2:   #202030;
+      --lime:    #c8f060; --lime2:   #a8d040; --sky:     #67e8f9;
+      --lilac:   #a78bfa; --rose:    #fb7185; --amber:   #fbbf24; --green:   #86efac;
+      --text:    #ebebf5; --muted:   #8888a8;
+      --border:  rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
       --glow:    0 0 40px rgba(200,240,96,0.15);
       --sidebar: 260px;
-      --font-display: 'Outfit', sans-serif;
-      --font-body:    'Space Grotesk', sans-serif;
-      --font-mono:    'JetBrains Mono', monospace;
+      --font-display: 'Outfit', sans-serif; --font-body: 'Space Grotesk', sans-serif; --font-mono: 'JetBrains Mono', monospace;
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); background: var(--ink); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.6; }
@@ -36,7 +24,7 @@
     ::-webkit-scrollbar-track { background: var(--ink2); }
     ::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 2px; }
 
-    /* ══ LOGIN ══ */
+    /* LOGIN */
     #loginScreen { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--ink); background-image: radial-gradient(ellipse 60% 50% at 50% -10%,rgba(200,240,96,0.12),transparent); padding: 1.5rem; }
     .login-card { background: var(--surface); border: 1px solid var(--border2); border-radius: 20px; padding: 2.5rem 2rem; width: 100%; max-width: 380px; box-shadow: 0 32px 80px rgba(0,0,0,0.6),var(--glow); }
     .login-logo { font-family: var(--font-display); font-weight: 900; font-size: 2rem; color: var(--lime); text-align: center; margin-bottom: 0.4rem; letter-spacing: -1px; }
@@ -49,10 +37,8 @@
     .login-err { background: rgba(251,113,133,0.1); border: 1px solid rgba(251,113,133,0.25); color: var(--rose); padding: 0.7rem 0.9rem; border-radius: 8px; font-size: 0.82rem; margin-bottom: 1rem; display: none; }
     .login-btn { width: 100%; padding: 0.88rem; border-radius: 100px; background: var(--lime); color: var(--ink); font-family: var(--font-display); font-size: 0.92rem; font-weight: 700; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 30px rgba(200,240,96,0.2); }
     .login-btn:hover { background: var(--lime2); transform: translateY(-2px); }
-    .login-hint { color: var(--muted); font-size: 0.72rem; text-align: center; margin-top: 1.2rem; }
-    .login-hint code { background: var(--ink2); border: 1px solid var(--border); padding: 0.15rem 0.5rem; border-radius: 5px; color: var(--lime); font-family: var(--font-mono); font-size: 0.72rem; }
 
-    /* ══ ADMIN LAYOUT ══ */
+    /* ADMIN LAYOUT */
     #adminApp { display: none; min-height: 100vh; }
     #adminApp.active { display: flex; }
     .sidebar { width: var(--sidebar); flex-shrink: 0; background: var(--ink2); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0; z-index: 100; overflow-y: auto; }
@@ -70,26 +56,22 @@
     .sb-footer { padding: 1rem 0.75rem; border-top: 1px solid var(--border); }
     .logout-btn { display: flex; align-items: center; gap: 0.6rem; width: 100%; padding: 0.65rem 0.75rem; border-radius: 10px; background: rgba(251,113,133,0.08); border: 1px solid rgba(251,113,133,0.15); color: var(--rose); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
     .logout-btn:hover { background: rgba(251,113,133,0.15); }
-
     .main { margin-left: var(--sidebar); flex: 1; min-height: 100vh; display: flex; flex-direction: column; }
     .topbar { background: rgba(8,8,14,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
     .topbar-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; }
     .topbar-actions { display: flex; gap: 0.6rem; align-items: center; }
-    .tb-badge { background: rgba(200,240,96,0.08); border: 1px solid rgba(200,240,96,0.2); color: var(--lime); padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.72rem; font-weight: 600; }
+    .tb-badge { background: rgba(200,240,96,0.08); border: 1px solid rgba(200,240,96,0.2); color: var(--lime); padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.72rem; font-weight: 600; transition: all 0.3s; }
     .preview-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--sky); font-size: 0.82rem; text-decoration: none; font-weight: 600; transition: gap 0.2s; }
     .preview-link:hover { gap: 0.7rem; }
     .content { padding: 2rem; flex: 1; }
-
     .panel { display: none; }
     .panel.active { display: block; }
     .panel-header { margin-bottom: 1.75rem; }
     .panel-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 0.3rem; }
     .panel-desc { color: var(--muted); font-size: 0.87rem; }
-
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; }
     .card-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--border); }
     .card-title .ico { font-size: 1rem; }
-
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
     .field { margin-bottom: 0.85rem; }
@@ -97,9 +79,7 @@
     .field input, .field textarea, .field select { width: 100%; padding: 0.72rem 0.9rem; background: var(--ink2); border: 1px solid var(--border); border-radius: 9px; color: var(--text); font-family: var(--font-body); font-size: 0.87rem; transition: border-color 0.2s, box-shadow 0.2s; }
     .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--lime); box-shadow: 0 0 0 3px rgba(200,240,96,0.08); }
     .field textarea { resize: vertical; min-height: 90px; }
-    .field select { cursor: pointer; }
     .field input::placeholder, .field textarea::placeholder { color: #3a3a58; }
-
     .save-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.72rem 1.5rem; border-radius: 100px; background: var(--lime); color: var(--ink); font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.22s; box-shadow: 0 0 20px rgba(200,240,96,0.2); }
     .save-btn:hover { background: var(--lime2); transform: translateY(-2px); }
     .cancel-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.72rem 1.2rem; border-radius: 100px; background: transparent; color: var(--muted); font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); cursor: pointer; transition: all 0.22s; font-family: var(--font-body); }
@@ -112,10 +92,20 @@
     .reply-btn:hover { background: rgba(103,232,249,0.15); }
     .btn-row { display: flex; align-items: center; gap: 0.7rem; margin-top: 1rem; flex-wrap: wrap; }
 
+    /* AUTO-SAVE indicator */
+    .autosave-pill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 100px; transition: all 0.4s; }
+    .autosave-pill.saved { background: rgba(200,240,96,0.08); border: 1px solid rgba(200,240,96,0.2); color: var(--lime); }
+    .autosave-pill.saving { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); color: var(--amber); }
+    .autosave-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .autosave-dot.pulse { animation: pulse 1s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+    /* TOAST */
     #toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(8px); background: var(--surface); border: 1px solid rgba(200,240,96,0.3); color: var(--lime); padding: 0.7rem 1.4rem; border-radius: 100px; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; box-shadow: 0 8px 32px rgba(0,0,0,0.5),var(--glow); opacity: 0; pointer-events: none; z-index: 9999; transition: opacity 0.3s, transform 0.3s; white-space: nowrap; }
     #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
     #toast.err { border-color: rgba(251,113,133,0.3); color: var(--rose); }
 
+    /* ITEM LISTS */
     .item-list { display: flex; flex-direction: column; gap: 0.75rem; }
     .item-card { background: var(--ink2); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
     .item-card:hover { border-color: var(--border2); }
@@ -126,6 +116,7 @@
     .edit-btn { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.42rem 0.85rem; border-radius: 100px; background: rgba(103,232,249,0.08); color: var(--sky); font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(103,232,249,0.18); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
     .edit-btn:hover { background: rgba(103,232,249,0.15); }
 
+    /* MODAL */
     .modal-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(8,8,14,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
     .modal { background: var(--surface); border: 1px solid var(--border2); border-radius: 18px; padding: 1.75rem; width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; transform: scale(0.96); transition: transform 0.25s; }
@@ -135,17 +126,20 @@
     .modal-close { background: var(--ink2); border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
     .modal-close:hover { border-color: var(--rose); color: var(--rose); }
 
+    /* STATS */
     .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.85rem; margin-bottom: 1.5rem; }
     .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem; }
     .stat-card-num { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; color: var(--lime); line-height: 1; }
     .stat-card-lbl { color: var(--muted); font-size: 0.72rem; margin-top: 0.3rem; }
 
-    .tag-editor { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    /* TAG EDITOR */
+    .tag-editor { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-bottom: 0.5rem; }
     .tag-chip { background: var(--ink2); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 100px; font-size: 0.74rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; }
     .tag-chip button { background: none; border: none; color: var(--rose); cursor: pointer; font-size: 0.8rem; line-height: 1; padding: 0; display: flex; align-items: center; }
     .tag-add-input { background: var(--ink2); border: 1px solid var(--border); border-radius: 100px; padding: 0.25rem 0.7rem; font-size: 0.74rem; color: var(--text); width: 100px; font-family: var(--font-body); }
     .tag-add-input:focus { outline: none; border-color: var(--lime); }
 
+    /* QUICK ACTIONS */
     .quick-actions { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; margin-top: 1.25rem; }
     .qa-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; cursor: pointer; transition: all 0.25s; display: flex; align-items: center; gap: 0.85rem; }
     .qa-card:hover { border-color: rgba(200,240,96,0.25); transform: translateY(-3px); box-shadow: var(--glow); }
@@ -153,15 +147,14 @@
     .qa-name { font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; }
     .qa-desc { color: var(--muted); font-size: 0.73rem; }
 
-    /* ══ INBOX ══ */
+    /* INBOX */
     .inbox-filters { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
     .inbox-filter { padding: 0.4rem 0.85rem; border-radius: 100px; font-size: 0.78rem; font-weight: 600; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
     .inbox-filter.active { background: rgba(200,240,96,0.1); border-color: rgba(200,240,96,0.3); color: var(--lime); }
-    .inbox-filter:hover:not(.active) { border-color: var(--border2); color: var(--text); }
     .inbox-empty { text-align: center; padding: 3rem; color: var(--muted); font-size: 0.9rem; }
     .inbox-empty .inbox-empty-ico { font-size: 2.5rem; margin-bottom: 0.75rem; }
     .msg-card { background: var(--ink2); border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.25rem; cursor: pointer; transition: all 0.25s; position: relative; overflow: hidden; }
-    .msg-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--lime); border-radius:0; transition: width 0.2s; }
+    .msg-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--lime); border-radius:0; }
     .msg-card.read::before { background: var(--border); }
     .msg-card.replied::before { background: var(--sky); }
     .msg-card:hover { border-color: var(--border2); transform: translateX(3px); }
@@ -176,31 +169,62 @@
     .badge-replied { background: rgba(103,232,249,0.1); border: 1px solid rgba(103,232,249,0.2); color: var(--sky); }
     .badge-email { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); color: var(--amber); font-family: var(--font-mono); }
 
-    /* ══ MESSAGE DETAIL MODAL ══ */
-    .msg-detail-header { margin-bottom: 1.25rem; }
+    /* MESSAGE DETAIL */
     .msg-detail-subject { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; }
     .msg-meta-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.85rem; background: var(--ink2); border: 1px solid var(--border); border-radius: 9px; margin-bottom: 0.5rem; }
     .msg-meta-label { font-size: 0.7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; min-width: 45px; }
     .msg-meta-val { font-size: 0.83rem; color: var(--text); font-weight: 500; }
     .msg-meta-val a { color: var(--lime); text-decoration: none; }
-    .msg-meta-val a:hover { text-decoration: underline; }
     .msg-body-box { background: var(--ink2); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin: 1.25rem 0; }
     .msg-body-label { font-size: 0.7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
     .msg-body-text { font-size: 0.88rem; color: var(--text); line-height: 1.8; white-space: pre-wrap; }
     .reply-area { margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
-    .reply-area-label { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
+    .reply-area-label { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem; }
     .reply-composer { background: var(--ink2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    .reply-to-line { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
-    .reply-to-line span { color: var(--text); font-weight: 600; }
-    .reply-subject-line { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
-    .reply-subject-line span { color: var(--text); font-weight: 500; }
+    .reply-to-line, .reply-subject-line { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
+    .reply-to-line span, .reply-subject-line span { color: var(--text); font-weight: 600; }
     #replyBody { width: 100%; padding: 1rem; background: transparent; border: none; color: var(--text); font-family: var(--font-body); font-size: 0.87rem; resize: none; min-height: 120px; line-height: 1.7; }
     #replyBody:focus { outline: none; }
     .reply-actions { padding: 0.75rem 1rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
     .reply-hint { font-size: 0.72rem; color: var(--muted); }
 
-    /* ══ VISITOR PANEL ══ */
-    .vis-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; margin-bottom: 1.5rem; }
+    /* PROFILE PICTURE */
+    .pic-upload-area { display: flex; align-items: center; gap: 1.5rem; padding: 1.25rem; background: var(--ink2); border: 2px dashed var(--border); border-radius: 14px; cursor: pointer; transition: border-color 0.2s; }
+    .pic-upload-area:hover { border-color: rgba(200,240,96,0.3); }
+    .pic-preview { width: 80px; height: 80px; border-radius: 16px; background: linear-gradient(135deg,var(--lime),var(--sky)); border: 2px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--ink); flex-shrink: 0; overflow: hidden; }
+    .pic-preview img { width: 100%; height: 100%; object-fit: cover; }
+    .pic-info { flex: 1; }
+    .pic-info-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .pic-info-sub { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+    .pic-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; border-radius: 100px; background: rgba(200,240,96,0.08); color: var(--lime); font-size: 0.78rem; font-weight: 600; border: 1px solid rgba(200,240,96,0.2); cursor: pointer; transition: all 0.22s; font-family: var(--font-body); margin-top: 0.6rem; }
+    .pic-btn:hover { background: rgba(200,240,96,0.15); }
+
+    /* RESUME PANEL */
+    .resume-drop { border: 2px dashed var(--border); border-radius: 14px; padding: 2.5rem; text-align: center; cursor: pointer; transition: all 0.25s; background: var(--ink2); position: relative; }
+    .resume-drop:hover, .resume-drop.dragover { border-color: rgba(200,240,96,0.4); background: rgba(200,240,96,0.03); }
+    .resume-drop-ico { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .resume-drop-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .resume-drop-sub { color: var(--muted); font-size: 0.8rem; }
+    .resume-current { background: var(--ink2); border: 1px solid rgba(200,240,96,0.2); border-radius: 12px; padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .resume-ico { font-size: 2rem; flex-shrink: 0; }
+    .resume-info { flex: 1; min-width: 0; }
+    .resume-name { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.2rem; color: var(--lime); }
+    .resume-meta { color: var(--muted); font-size: 0.75rem; }
+    .resume-actions { display: flex; gap: 0.5rem; flex-shrink: 0; flex-wrap: wrap; }
+    .resume-view-btn { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.42rem 0.85rem; border-radius: 100px; background: rgba(200,240,96,0.08); color: var(--lime); font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(200,240,96,0.18); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); text-decoration: none; }
+    .resume-view-btn:hover { background: rgba(200,240,96,0.15); }
+    .resume-toggle { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1.25rem; background: var(--ink2); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1rem; }
+    .toggle-switch { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider { position: absolute; inset: 0; background: var(--surf2); border-radius: 24px; cursor: pointer; transition: background 0.3s; }
+    .toggle-slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; bottom: 3px; background: var(--muted); border-radius: 50%; transition: transform 0.3s, background 0.3s; }
+    .toggle-switch input:checked + .toggle-slider { background: rgba(200,240,96,0.15); }
+    .toggle-switch input:checked + .toggle-slider::before { transform: translateX(20px); background: var(--lime); }
+    .toggle-label { flex: 1; }
+    .toggle-label-title { font-size: 0.87rem; font-weight: 600; color: var(--text); }
+    .toggle-label-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+
+    /* VISITOR PANEL */
     .vis-entry { background: var(--ink2); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.85rem; }
     .vis-flag { font-size: 1.4rem; flex-shrink: 0; }
     .vis-info { flex: 1; min-width: 0; }
@@ -213,14 +237,14 @@
     @media (max-width: 900px) {
       :root { --sidebar: 220px; }
       .form-grid { grid-template-columns: 1fr; } .form-grid-3 { grid-template-columns: 1fr 1fr; }
-      .stats-row { grid-template-columns: 1fr 1fr; } .quick-actions { grid-template-columns: 1fr 1fr; } .vis-stats { grid-template-columns: 1fr 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; } .quick-actions { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 660px) {
       :root { --sidebar: 0px; }
       .sidebar { transform: translateX(-100%); width: 240px; transition: transform 0.3s; }
       .sidebar.mob-open { transform: translateX(0); }
       .main { margin-left: 0; } .content { padding: 1.25rem; }
-      .stats-row { grid-template-columns: 1fr 1fr; } .quick-actions { grid-template-columns: 1fr; } .vis-stats { grid-template-columns: 1fr 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; } .quick-actions { grid-template-columns: 1fr; }
       .topbar { padding: 0 1.25rem; } #mobMenuBtn { display: flex !important; }
     }
     #mobMenuBtn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); color: var(--text); cursor: pointer; font-size: 1rem; }
@@ -236,7 +260,7 @@
     <div class="login-field"><label>Username</label><input type="text" id="loginUser" placeholder="admin" autocomplete="username"></div>
     <div class="login-field"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password"></div>
     <button class="login-btn" onclick="doLogin()">Sign In →</button>
-    </div>
+  </div>
 </div>
 
 <div id="adminApp">
@@ -248,7 +272,6 @@
     <nav class="sb-nav">
       <div class="sb-section-label">Overview</div>
       <button class="sb-link active" onclick="showPanel('dashboard',this)"><span class="ico">🏠</span> Dashboard</button>
-
       <div class="sb-section-label">Content</div>
       <button class="sb-link" onclick="showPanel('hero',this)"><span class="ico">✨</span> Hero Section</button>
       <button class="sb-link" onclick="showPanel('about',this)"><span class="ico">👤</span> About Me</button>
@@ -256,13 +279,12 @@
       <button class="sb-link" onclick="showPanel('projects',this)"><span class="ico">🗂️</span> Projects</button>
       <button class="sb-link" onclick="showPanel('experience',this)"><span class="ico">📅</span> Experience</button>
       <button class="sb-link" onclick="showPanel('contact',this)"><span class="ico">📬</span> Contact</button>
-
+      <div class="sb-section-label">Media</div>
+      <button class="sb-link" onclick="showPanel('media',this)"><span class="ico">🖼️</span> Photo & Resume</button>
       <div class="sb-section-label">Messages</div>
       <button class="sb-link" onclick="showPanel('inbox',this)" id="inboxNavBtn"><span class="ico">✉️</span> Inbox <span class="sb-badge" id="inboxBadge">0</span></button>
-
       <div class="sb-section-label">Analytics</div>
       <button class="sb-link" onclick="showPanel('visitors',this)"><span class="ico">👁️</span> Visitor History</button>
-
       <div class="sb-section-label">System</div>
       <button class="sb-link" onclick="showPanel('settings',this)"><span class="ico">⚙️</span> Settings</button>
     </nav>
@@ -278,8 +300,11 @@
         <span class="topbar-title" id="topbarTitle">Dashboard</span>
       </div>
       <div class="topbar-actions">
-        <span class="tb-badge" id="saveStatus">● Auto-saved</span>
-        <a href="portfolio.html" target="_blank" class="preview-link">Preview Portfolio →</a>
+        <div class="autosave-pill saved" id="autoSaveStatus">
+          <div class="autosave-dot" id="autoSaveDot"></div>
+          <span id="autoSaveText">Auto-saved</span>
+        </div>
+        <a href="index.html" target="_blank" class="preview-link">Preview Portfolio →</a>
       </div>
     </div>
 
@@ -289,7 +314,7 @@
       <div class="panel active" id="panel-dashboard">
         <div class="panel-header">
           <div class="panel-title">Welcome back, Queenie! 👋</div>
-          <div class="panel-desc">Manage your portfolio content from here.</div>
+          <div class="panel-desc">Manage your portfolio content from here. Lahat ng changes ay auto-saved!</div>
         </div>
         <div class="stats-row">
           <div class="stat-card"><div class="stat-card-num" id="dash-proj">7</div><div class="stat-card-lbl">Projects</div></div>
@@ -303,9 +328,9 @@
             <div class="qa-card" onclick="showPanel('hero',qb('hero'))"><span class="qa-ico">✨</span><div><div class="qa-name">Hero</div><div class="qa-desc">Name, tagline, status</div></div></div>
             <div class="qa-card" onclick="showPanel('projects',qb('projects'))"><span class="qa-ico">🗂️</span><div><div class="qa-name">Projects</div><div class="qa-desc">Add or edit projects</div></div></div>
             <div class="qa-card" onclick="showPanel('experience',qb('experience'))"><span class="qa-ico">📅</span><div><div class="qa-name">Experience</div><div class="qa-desc">Timeline entries</div></div></div>
+            <div class="qa-card" onclick="showPanel('media',qb('media'))"><span class="qa-ico">🖼️</span><div><div class="qa-name">Photo & Resume</div><div class="qa-desc">Profile pic & CV</div></div></div>
             <div class="qa-card" onclick="showPanel('inbox',qb('inbox'))"><span class="qa-ico">✉️</span><div><div class="qa-name">Inbox</div><div class="qa-desc">Messages from visitors</div></div></div>
             <div class="qa-card" onclick="showPanel('visitors',qb('visitors'))"><span class="qa-ico">👁️</span><div><div class="qa-name">Visitors</div><div class="qa-desc">Location history</div></div></div>
-            <div class="qa-card" onclick="showPanel('contact',qb('contact'))"><span class="qa-ico">📬</span><div><div class="qa-name">Contact</div><div class="qa-desc">Links & email</div></div></div>
           </div>
         </div>
         <div class="card">
@@ -321,66 +346,60 @@
 
       <!-- HERO -->
       <div class="panel" id="panel-hero">
-        <div class="panel-header"><div class="panel-title">✨ Hero Section</div><div class="panel-desc">The first thing visitors see.</div></div>
+        <div class="panel-header"><div class="panel-title">✨ Hero Section</div><div class="panel-desc">The first thing visitors see. Changes save automatically.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">👤</span> Identity</div>
           <div class="form-grid">
-            <div class="field"><label>First Name</label><input type="text" id="h-firstname" placeholder="Queenie"></div>
-            <div class="field"><label>Last Name</label><input type="text" id="h-lastname" placeholder="V. De Guzman"></div>
+            <div class="field"><label>First Name</label><input type="text" id="h-firstname" placeholder="Queenie" oninput="autoSave('hero')"></div>
+            <div class="field"><label>Last Name</label><input type="text" id="h-lastname" placeholder="V. De Guzman" oninput="autoSave('hero')"></div>
           </div>
-          <div class="field"><label>Title / Role</label><input type="text" id="h-title" placeholder="Software Engineer"></div>
-          <div class="field"><label>Tagline / Description</label><textarea id="h-desc" rows="3"></textarea></div>
-          <div class="field"><label>Availability Badge</label><input type="text" id="h-badge" placeholder="Available for Projects"></div>
-          <div class="btn-row"><button class="save-btn" onclick="saveHero()">💾 Save Changes</button></div>
+          <div class="field"><label>Title / Role</label><input type="text" id="h-title" placeholder="Software Engineer" oninput="autoSave('hero')"></div>
+          <div class="field"><label>Tagline / Description</label><textarea id="h-desc" rows="3" oninput="autoSave('hero')"></textarea></div>
+          <div class="field"><label>Availability Badge</label><input type="text" id="h-badge" placeholder="Available for Projects" oninput="autoSave('hero')"></div>
         </div>
         <div class="card">
           <div class="card-title"><span class="ico">📊</span> Stats Bar</div>
           <div class="form-grid-3">
-            <div><div class="field"><label>Stat 1 — Number</label><input type="text" id="stat1-num" placeholder="1+"></div><div class="field"><label>Stat 1 — Label</label><input type="text" id="stat1-lbl" placeholder="Years Exp."></div></div>
-            <div><div class="field"><label>Stat 2 — Number</label><input type="text" id="stat2-num" placeholder="7+"></div><div class="field"><label>Stat 2 — Label</label><input type="text" id="stat2-lbl" placeholder="Projects"></div></div>
-            <div><div class="field"><label>Stat 3 — Number</label><input type="text" id="stat3-num" placeholder="NC III"></div><div class="field"><label>Stat 3 — Label</label><input type="text" id="stat3-lbl" placeholder="Certified"></div></div>
+            <div><div class="field"><label>Stat 1 — Number</label><input type="text" id="stat1-num" placeholder="1+" oninput="autoSave('hero')"></div><div class="field"><label>Stat 1 — Label</label><input type="text" id="stat1-lbl" placeholder="Years Exp." oninput="autoSave('hero')"></div></div>
+            <div><div class="field"><label>Stat 2 — Number</label><input type="text" id="stat2-num" placeholder="7+" oninput="autoSave('hero')"></div><div class="field"><label>Stat 2 — Label</label><input type="text" id="stat2-lbl" placeholder="Projects" oninput="autoSave('hero')"></div></div>
+            <div><div class="field"><label>Stat 3 — Number</label><input type="text" id="stat3-num" placeholder="NC III" oninput="autoSave('hero')"></div><div class="field"><label>Stat 3 — Label</label><input type="text" id="stat3-lbl" placeholder="Certified" oninput="autoSave('hero')"></div></div>
           </div>
-          <div class="btn-row"><button class="save-btn" onclick="saveHero()">💾 Save Changes</button></div>
         </div>
         <div class="card">
           <div class="card-title"><span class="ico">💻</span> Terminal Widget</div>
-          <div class="field"><label>Stack (comma-separated)</label><input type="text" id="h-stack" placeholder="Laravel, Vue.js, ASP.NET, Django"></div>
-          <div class="field"><label>Status Text</label><input type="text" id="h-status" placeholder="🟢 Open to Work"></div>
-          <div class="btn-row"><button class="save-btn" onclick="saveHero()">💾 Save Changes</button></div>
+          <div class="field"><label>Stack (comma-separated)</label><input type="text" id="h-stack" placeholder="Laravel, Vue.js, ASP.NET, Django" oninput="autoSave('hero')"></div>
+          <div class="field"><label>Status Text</label><input type="text" id="h-status" placeholder="🟢 Open to Work" oninput="autoSave('hero')"></div>
         </div>
       </div>
 
       <!-- ABOUT -->
       <div class="panel" id="panel-about">
-        <div class="panel-header"><div class="panel-title">👤 About Me</div><div class="panel-desc">Personal info and highlights.</div></div>
+        <div class="panel-header"><div class="panel-title">👤 About Me</div><div class="panel-desc">Personal info and highlights. Auto-saved.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">📋</span> Info Card</div>
           <div class="form-grid">
-            <div class="field"><label>Location</label><input type="text" id="a-location"></div>
-            <div class="field"><label>Education</label><input type="text" id="a-education"></div>
-            <div class="field"><label>School</label><input type="text" id="a-school"></div>
-            <div class="field"><label>Current Role</label><input type="text" id="a-role"></div>
-            <div class="field"><label>Certification</label><input type="text" id="a-cert"></div>
-            <div class="field"><label>Status</label><input type="text" id="a-status"></div>
+            <div class="field"><label>Location</label><input type="text" id="a-location" oninput="autoSave('about')"></div>
+            <div class="field"><label>Education</label><input type="text" id="a-education" oninput="autoSave('about')"></div>
+            <div class="field"><label>School</label><input type="text" id="a-school" oninput="autoSave('about')"></div>
+            <div class="field"><label>Current Role</label><input type="text" id="a-role" oninput="autoSave('about')"></div>
+            <div class="field"><label>Certification</label><input type="text" id="a-cert" oninput="autoSave('about')"></div>
+            <div class="field"><label>Status</label><input type="text" id="a-status" oninput="autoSave('about')"></div>
           </div>
-          <div class="btn-row"><button class="save-btn" onclick="saveAbout()">💾 Save Changes</button></div>
         </div>
         <div class="card">
           <div class="card-title"><span class="ico">📝</span> Bio Paragraphs</div>
-          <div class="field"><label>Paragraph 1</label><textarea id="a-p1" rows="4"></textarea></div>
-          <div class="field"><label>Paragraph 2</label><textarea id="a-p2" rows="4"></textarea></div>
-          <div class="field"><label>Paragraph 3</label><textarea id="a-p3" rows="4"></textarea></div>
-          <div class="btn-row"><button class="save-btn" onclick="saveAbout()">💾 Save Changes</button></div>
+          <div class="field"><label>Paragraph 1</label><textarea id="a-p1" rows="4" oninput="autoSave('about')"></textarea></div>
+          <div class="field"><label>Paragraph 2</label><textarea id="a-p2" rows="4" oninput="autoSave('about')"></textarea></div>
+          <div class="field"><label>Paragraph 3</label><textarea id="a-p3" rows="4" oninput="autoSave('about')"></textarea></div>
         </div>
         <div class="card">
           <div class="card-title"><span class="ico">⭐</span> Highlights (4 boxes)</div>
           <div class="form-grid">
-            <div><div class="field"><label>Title 1</label><input type="text" id="hl1-t"></div><div class="field"><label>Subtitle 1</label><input type="text" id="hl1-s"></div></div>
-            <div><div class="field"><label>Title 2</label><input type="text" id="hl2-t"></div><div class="field"><label>Subtitle 2</label><input type="text" id="hl2-s"></div></div>
-            <div><div class="field"><label>Title 3</label><input type="text" id="hl3-t"></div><div class="field"><label>Subtitle 3</label><input type="text" id="hl3-s"></div></div>
-            <div><div class="field"><label>Title 4</label><input type="text" id="hl4-t"></div><div class="field"><label>Subtitle 4</label><input type="text" id="hl4-s"></div></div>
+            <div><div class="field"><label>Title 1</label><input type="text" id="hl1-t" oninput="autoSave('about')"></div><div class="field"><label>Subtitle 1</label><input type="text" id="hl1-s" oninput="autoSave('about')"></div></div>
+            <div><div class="field"><label>Title 2</label><input type="text" id="hl2-t" oninput="autoSave('about')"></div><div class="field"><label>Subtitle 2</label><input type="text" id="hl2-s" oninput="autoSave('about')"></div></div>
+            <div><div class="field"><label>Title 3</label><input type="text" id="hl3-t" oninput="autoSave('about')"></div><div class="field"><label>Subtitle 3</label><input type="text" id="hl3-s" oninput="autoSave('about')"></div></div>
+            <div><div class="field"><label>Title 4</label><input type="text" id="hl4-t" oninput="autoSave('about')"></div><div class="field"><label>Subtitle 4</label><input type="text" id="hl4-s" oninput="autoSave('about')"></div></div>
           </div>
-          <div class="btn-row"><button class="save-btn" onclick="saveAbout()">💾 Save Changes</button></div>
         </div>
       </div>
 
@@ -416,26 +435,77 @@
 
       <!-- CONTACT -->
       <div class="panel" id="panel-contact">
-        <div class="panel-header"><div class="panel-title">📬 Contact Info</div><div class="panel-desc">Social links and contact email.</div></div>
+        <div class="panel-header"><div class="panel-title">📬 Contact Info</div><div class="panel-desc">Social links and contact email. Auto-saved.</div></div>
         <div class="card">
           <div class="card-title"><span class="ico">🔗</span> Social Links</div>
           <div class="form-grid">
-            <div class="field"><label>Email Address</label><input type="email" id="c-email"></div>
-            <div class="field"><label>LinkedIn URL</label><input type="text" id="c-linkedin"></div>
-            <div class="field"><label>Raket.ph URL</label><input type="text" id="c-raket"></div>
-            <div class="field"><label>Instagram URL</label><input type="text" id="c-ig"></div>
-            <div class="field"><label>GitHub URL</label><input type="text" id="c-github"></div>
+            <div class="field"><label>Email Address</label><input type="email" id="c-email" oninput="autoSave('contact')"></div>
+            <div class="field"><label>LinkedIn URL</label><input type="text" id="c-linkedin" oninput="autoSave('contact')"></div>
+            <div class="field"><label>Raket.ph URL</label><input type="text" id="c-raket" oninput="autoSave('contact')"></div>
+            <div class="field"><label>Instagram URL</label><input type="text" id="c-ig" oninput="autoSave('contact')"></div>
+            <div class="field"><label>GitHub URL</label><input type="text" id="c-github" oninput="autoSave('contact')"></div>
           </div>
-          <div class="btn-row"><button class="save-btn" onclick="saveContact()">💾 Save Changes</button></div>
+        </div>
+      </div>
+
+      <!-- MEDIA: PHOTO & RESUME -->
+      <div class="panel" id="panel-media">
+        <div class="panel-header"><div class="panel-title">🖼️ Photo & Resume</div><div class="panel-desc">Upload your profile picture and resume/CV. Lalabas agad sa portfolio!</div></div>
+
+        <!-- Profile Picture -->
+        <div class="card">
+          <div class="card-title"><span class="ico">📸</span> Profile Picture</div>
+          <div class="pic-upload-area" onclick="document.getElementById('picFileInput').click()" id="picUploadArea">
+            <div class="pic-preview" id="picPreview">QDG</div>
+            <div class="pic-info">
+              <div class="pic-info-title">Upload Profile Photo</div>
+              <div class="pic-info-sub">Lalabas sa About section ng portfolio.<br>Recommended: square image, kahit anong format (JPG, PNG, WebP).<br>Max size: 2MB</div>
+              <button class="pic-btn" onclick="event.stopPropagation();document.getElementById('picFileInput').click()">📁 Choose Photo</button>
+            </div>
+          </div>
+          <input type="file" id="picFileInput" accept="image/*" style="display:none" onchange="handlePicUpload(event)">
+          <div class="btn-row" style="margin-top:0.75rem;">
+            <button class="delete-btn" onclick="removePic()" id="removePicBtn" style="display:none">🗑️ Remove Photo</button>
+          </div>
+        </div>
+
+        <!-- Resume -->
+        <div class="card">
+          <div class="card-title"><span class="ico">📄</span> Resume / CV</div>
+          <div id="resumeCurrentSection" style="display:none">
+            <div class="resume-current" id="resumeCurrent">
+              <div class="resume-ico">📄</div>
+              <div class="resume-info">
+                <div class="resume-name" id="resumeFileName">resume.pdf</div>
+                <div class="resume-meta" id="resumeFileMeta">Uploaded • Visible on portfolio</div>
+              </div>
+              <div class="resume-actions">
+                <a href="#" class="resume-view-btn" id="resumeViewBtn" target="_blank">👁️ View</a>
+                <button class="delete-btn" onclick="removeResume()">🗑️ Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="resume-toggle">
+            <label class="toggle-switch"><input type="checkbox" id="resumeVisible" onchange="saveResumeSettings()"><div class="toggle-slider"></div></label>
+            <div class="toggle-label">
+              <div class="toggle-label-title">Show Resume Button on Portfolio</div>
+              <div class="toggle-label-sub">Kapag naka-ON, lalabas ang "Download Resume" button sa hero at contact section</div>
+            </div>
+          </div>
+          <div class="resume-drop" id="resumeDropZone" onclick="document.getElementById('resumeFileInput').click()">
+            <div class="resume-drop-ico">📤</div>
+            <div class="resume-drop-title">Upload Resume / CV</div>
+            <div class="resume-drop-sub">I-drag dito o i-click para pumili ng file<br>Accepted: PDF • Max 5MB</div>
+          </div>
+          <input type="file" id="resumeFileInput" accept=".pdf" style="display:none" onchange="handleResumeUpload(event)">
+          <p style="color:var(--muted);font-size:0.75rem;margin-top:0.75rem;">⚠️ Note: Ang resume ay naka-store sa browser storage (Base64). Para sa production, i-host mo ang PDF sa Google Drive o Dropbox at i-paste ang direct link sa ibaba.</p>
+          <div class="field" style="margin-top:0.75rem;"><label>Or paste direct PDF link (Google Drive, Dropbox, etc.)</label><input type="text" id="resumeDirectLink" placeholder="https://drive.google.com/file/d/xxx/view" oninput="saveResumeSettings()"></div>
         </div>
       </div>
 
       <!-- INBOX -->
       <div class="panel" id="panel-inbox">
-        <div class="panel-header">
-          <div class="panel-title">✉️ Inbox</div>
-          <div class="panel-desc">Messages sent through your portfolio contact form.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">✉️ Inbox</div><div class="panel-desc">Messages sent through your portfolio contact form.</div></div>
         <div class="inbox-filters">
           <button class="inbox-filter active" onclick="setInboxFilter('all',this)">All</button>
           <button class="inbox-filter" onclick="setInboxFilter('unread',this)">Unread</button>
@@ -452,10 +522,7 @@
 
       <!-- VISITORS -->
       <div class="panel" id="panel-visitors">
-        <div class="panel-header">
-          <div class="panel-title">👁️ Visitor History</div>
-          <div class="panel-desc">Location and time of each portfolio visit.</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">👁️ Visitor History</div><div class="panel-desc">Location and time of each portfolio visit.</div></div>
         <div class="stats-row" id="visitorStats" style="grid-template-columns:repeat(3,1fr)"></div>
         <div class="card">
           <div class="card-title"><span class="ico">🌍</span> Countries Seen</div>
@@ -483,14 +550,14 @@
         </div>
         <div class="card">
           <div class="card-title"><span class="ico">🌐</span> Portfolio File Link</div>
-          <div class="field"><label>Portfolio HTML filename (same folder)</label><input type="text" id="s-portfolioFile" placeholder="queenie-portfolio.html"></div>
+          <div class="field"><label>Portfolio HTML filename (same folder)</label><input type="text" id="s-portfolioFile" placeholder="index.html"></div>
           <div class="btn-row"><button class="save-btn" onclick="saveSettings()">💾 Save</button></div>
         </div>
       </div>
 
-    </div><!-- /content -->
-  </div><!-- /main -->
-</div><!-- /adminApp -->
+    </div>
+  </div>
+</div>
 
 <!-- SKILL MODAL -->
 <div class="modal-overlay" id="skillModal">
@@ -541,10 +608,7 @@
 <!-- MESSAGE DETAIL MODAL -->
 <div class="modal-overlay" id="msgModal">
   <div class="modal" style="max-width:640px;">
-    <div class="modal-header">
-      <div class="modal-title">✉️ Message</div>
-      <button class="modal-close" onclick="closeModal('msgModal')">✕</button>
-    </div>
+    <div class="modal-header"><div class="modal-title">✉️ Message</div><button class="modal-close" onclick="closeModal('msgModal')">✕</button></div>
     <div id="msgDetailContent"></div>
   </div>
 </div>
@@ -555,6 +619,7 @@
 const INBOX_KEY = 'qdg_inbox';
 let inboxFilter = 'all';
 let currentMsgId = null;
+let autoSaveTimers = {};
 
 const DEFAULT = {
   hero: { firstname:'Queenie', lastname:'V. De Guzman', title:'Software Engineer', desc:'Full-stack developer crafting elegant digital solutions — from cloud-based agricultural systems to government platforms. I build things that matter.', badge:'Available for Projects', stat1_num:'1+', stat1_lbl:'Years Exp.', stat2_num:'7+', stat2_lbl:'Projects', stat3_num:'NC III', stat3_lbl:'Certified', stack:'Laravel, Vue.js, ASP.NET, Django', status:'🟢 Open to Work' },
@@ -585,12 +650,49 @@ const DEFAULT = {
     { date:'Aug 1 – Sep 16, 2024', title:'JAVA NC III Certification — TESDA', desc:'Comprehensive Java training. Certified to build scalable enterprise applications.' }
   ],
   contact: { email:'queenievillapando11030713@gmail.com', linkedin:'https://www.linkedin.com/in/queenie-de-guzman-451a08323/', raket:'https://www.raket.ph/mukwini', ig:'https://www.instagram.com/queenievillapando/', github:'' },
-  settings: { user:'admin', pass:'qdg2025', portfolioFile:'queenie-portfolio.html' }
+  settings: { user:'admin', pass:'qdg2025', portfolioFile:'index.html' }
 };
 
 function load(key) { try { return JSON.parse(localStorage.getItem('qdg_'+key)) || DEFAULT[key]; } catch { return DEFAULT[key]; } }
-function save(key, val) { localStorage.setItem('qdg_'+key, JSON.stringify(val)); flashSaveStatus(); }
-function flashSaveStatus() { const el=document.getElementById('saveStatus'); el.textContent='✓ Saved!'; el.style.color='var(--lime)'; setTimeout(()=>{el.textContent='● Auto-saved';el.style.color='';},2000); }
+function save(key, val) { localStorage.setItem('qdg_'+key, JSON.stringify(val)); }
+
+/* ── AUTO-SAVE ── */
+function autoSave(section) {
+  // Show saving indicator
+  const dot = document.getElementById('autoSaveDot');
+  const text = document.getElementById('autoSaveText');
+  const pill = document.getElementById('autoSaveStatus');
+  pill.className = 'autosave-pill saving';
+  dot.className = 'autosave-dot pulse';
+  text.textContent = 'Saving…';
+
+  clearTimeout(autoSaveTimers[section]);
+  autoSaveTimers[section] = setTimeout(() => {
+    // Collect data based on section
+    if (section === 'hero') collectAndSaveHero();
+    if (section === 'about') collectAndSaveAbout();
+    if (section === 'contact') collectAndSaveContact();
+    // Show saved
+    pill.className = 'autosave-pill saved';
+    dot.className = 'autosave-dot';
+    text.textContent = '✓ Saved';
+    setTimeout(() => { text.textContent = 'Auto-saved'; }, 2000);
+  }, 600);
+}
+
+function collectAndSaveHero() {
+  const fields = ['firstname','lastname','title','desc','badge','stack','status','stat1_num','stat1_lbl','stat2_num','stat2_lbl','stat3_num','stat3_lbl'];
+  const d = {}; fields.forEach(f=>{const id=f.includes('stat')?f.replace('_','-'):'h-'+f;const el=document.getElementById(id);if(el) d[f]=el.value;});
+  save('hero',d);
+}
+function collectAndSaveAbout() {
+  const map = {'a-location':'location','a-education':'education','a-school':'school','a-role':'role','a-cert':'cert','a-status':'status','a-p1':'p1','a-p2':'p2','a-p3':'p3','hl1-t':'hl1_t','hl1-s':'hl1_s','hl2-t':'hl2_t','hl2-s':'hl2_s','hl3-t':'hl3_t','hl3-s':'hl3_s','hl4-t':'hl4_t','hl4-s':'hl4_s'};
+  const d={}; Object.entries(map).forEach(([id,key])=>{const el=document.getElementById(id);if(el) d[key]=el.value;});
+  save('about',d);
+}
+function collectAndSaveContact() {
+  save('contact',{email:document.getElementById('c-email').value,linkedin:document.getElementById('c-linkedin').value,raket:document.getElementById('c-raket').value,ig:document.getElementById('c-ig').value,github:document.getElementById('c-github').value});
+}
 
 /* ── AUTH ── */
 function doLogin() {
@@ -611,16 +713,17 @@ document.addEventListener('keydown', e => { if (e.key==='Enter' && document.getE
 function doLogout() { sessionStorage.removeItem('qdg_authed'); document.getElementById('loginScreen').style.display=''; document.getElementById('adminApp').classList.remove('active'); document.getElementById('loginUser').value=''; document.getElementById('loginPass').value=''; }
 
 /* ── PANELS ── */
-function qb(id) { return document.querySelector(`[onclick*="${id}"]`); }
+function qb(id) { return document.querySelector(`.sb-link[onclick*="'${id}'"]`) || document.querySelector(`[onclick*="${id}"]`); }
 function showPanel(id, btn) {
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sb-link').forEach(b=>b.classList.remove('active'));
   document.getElementById('panel-'+id).classList.add('active');
   if (btn) btn.classList.add('active');
-  const titles = { dashboard:'Dashboard', hero:'Hero Section', about:'About Me', skills:'Skills', projects:'Projects', experience:'Experience & Training', contact:'Contact Info', inbox:'Inbox', visitors:'Visitor History', settings:'Settings' };
+  const titles = { dashboard:'Dashboard', hero:'Hero Section', about:'About Me', skills:'Skills', projects:'Projects', experience:'Experience & Training', contact:'Contact Info', media:'Photo & Resume', inbox:'Inbox', visitors:'Visitor History', settings:'Settings' };
   document.getElementById('topbarTitle').textContent = titles[id]||id;
   if (id==='visitors') loadVisitorPanel();
   if (id==='inbox') loadInboxPanel();
+  if (id==='media') loadMediaPanel();
   closeMobMenu();
 }
 function toggleMobMenu() { document.getElementById('sidebar').classList.toggle('mob-open'); }
@@ -639,22 +742,12 @@ function loadHero() {
   const fields = ['firstname','lastname','title','desc','badge','stack','status','stat1_num','stat1_lbl','stat2_num','stat2_lbl','stat3_num','stat3_lbl'];
   fields.forEach(f => { const id=f.includes('stat')?f.replace('_','-'):'h-'+f; const el=document.getElementById(id); if(el) el.value=d[f]??''; });
 }
-function saveHero() {
-  const fields = ['firstname','lastname','title','desc','badge','stack','status','stat1_num','stat1_lbl','stat2_num','stat2_lbl','stat3_num','stat3_lbl'];
-  const d = {}; fields.forEach(f=>{const id=f.includes('stat')?f.replace('_','-'):'h-'+f;const el=document.getElementById(id);if(el) d[f]=el.value;});
-  save('hero',d); toast('✓ Hero section saved!');
-}
 
 /* ── ABOUT ── */
 function loadAbout() {
   const d = load('about');
   const map = {'a-location':'location','a-education':'education','a-school':'school','a-role':'role','a-cert':'cert','a-status':'status','a-p1':'p1','a-p2':'p2','a-p3':'p3','hl1-t':'hl1_t','hl1-s':'hl1_s','hl2-t':'hl2_t','hl2-s':'hl2_s','hl3-t':'hl3_t','hl3-s':'hl3_s','hl4-t':'hl4_t','hl4-s':'hl4_s'};
   Object.entries(map).forEach(([id,key])=>{const el=document.getElementById(id);if(el) el.value=d[key]??'';});
-}
-function saveAbout() {
-  const map = {'a-location':'location','a-education':'education','a-school':'school','a-role':'role','a-cert':'cert','a-status':'status','a-p1':'p1','a-p2':'p2','a-p3':'p3','hl1-t':'hl1_t','hl1-s':'hl1_s','hl2-t':'hl2_t','hl2-s':'hl2_s','hl3-t':'hl3_t','hl3-s':'hl3_s','hl4-t':'hl4_t','hl4-s':'hl4_s'};
-  const d={}; Object.entries(map).forEach(([id,key])=>{const el=document.getElementById(id);if(el) d[key]=el.value;});
-  save('about',d); toast('✓ About section saved!');
 }
 
 /* ── SKILLS ── */
@@ -739,26 +832,138 @@ function loadContact() {
   const d=load('contact');
   ['email','linkedin','raket','ig','github'].forEach(k=>{const el=document.getElementById('c-'+k);if(el) el.value=d[k]??'';});
 }
-function saveContact() {
-  save('contact',{email:document.getElementById('c-email').value,linkedin:document.getElementById('c-linkedin').value,raket:document.getElementById('c-raket').value,ig:document.getElementById('c-ig').value,github:document.getElementById('c-github').value});
-  toast('✓ Contact info saved!');
-}
 
 /* ── SETTINGS ── */
 function loadSettings() {
   const d=load('settings');
   document.getElementById('s-user').value=d.user??'admin';
-  document.getElementById('s-portfolioFile').value=d.portfolioFile??'queenie-portfolio.html';
+  document.getElementById('s-portfolioFile').value=d.portfolioFile??'index.html';
 }
 function saveSettings() {
   const s=load('settings'); const pf=document.getElementById('s-portfolioFile').value;
   save('settings',{user:document.getElementById('s-user').value.trim()||s.user,pass:document.getElementById('s-pass').value||s.pass,portfolioFile:pf});
   document.getElementById('s-pass').value='';
-  document.querySelector('.preview-link').href=pf||'queenie-portfolio.html';
+  document.querySelector('.preview-link').href=pf||'index.html';
   toast('✓ Settings saved!');
 }
 
-/* ══ INBOX ══ */
+/* ═══ MEDIA: PROFILE PIC & RESUME ═══ */
+function loadMediaPanel() {
+  // Profile pic
+  const pic = localStorage.getItem('qdg_profile_pic');
+  const preview = document.getElementById('picPreview');
+  const removeBtn = document.getElementById('removePicBtn');
+  if (pic) {
+    preview.innerHTML = `<img src="${pic}" alt="Profile">`;
+    removeBtn.style.display = 'inline-flex';
+  } else {
+    preview.innerHTML = 'QDG';
+    removeBtn.style.display = 'none';
+  }
+  // Resume
+  const resumeMeta = JSON.parse(localStorage.getItem('qdg_resume_meta') || 'null');
+  const resumeSection = document.getElementById('resumeCurrentSection');
+  const resumeVisible = document.getElementById('resumeVisible');
+  const resumeDirectLink = document.getElementById('resumeDirectLink');
+  if (resumeMeta) {
+    resumeSection.style.display = 'block';
+    document.getElementById('resumeFileName').textContent = resumeMeta.name || 'resume.pdf';
+    document.getElementById('resumeFileMeta').textContent = `Uploaded ${new Date(resumeMeta.ts).toLocaleDateString('en-PH')} · ${resumeMeta.size}`;
+    const viewBtn = document.getElementById('resumeViewBtn');
+    const resumeData = localStorage.getItem('qdg_resume_data');
+    const directLink = resumeMeta.directLink || '';
+    if (directLink) { viewBtn.href = directLink; }
+    else if (resumeData) { viewBtn.href = resumeData; }
+  } else {
+    resumeSection.style.display = 'none';
+  }
+  const settings = JSON.parse(localStorage.getItem('qdg_resume_settings') || '{}');
+  resumeVisible.checked = settings.visible !== false;
+  resumeDirectLink.value = settings.directLink || (resumeMeta?.directLink || '');
+}
+
+function handlePicUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) { toast('⚠️ File too large! Max 2MB.', true); return; }
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    localStorage.setItem('qdg_profile_pic', e.target.result);
+    loadMediaPanel();
+    toast('✓ Profile photo saved! Refresh the portfolio to see it.');
+  };
+  reader.readAsDataURL(file);
+  event.target.value = '';
+}
+
+function removePic() {
+  if (!confirm('Remove profile photo?')) return;
+  localStorage.removeItem('qdg_profile_pic');
+  loadMediaPanel();
+  toast('🗑️ Profile photo removed');
+}
+
+function handleResumeUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  if (!file.name.toLowerCase().endsWith('.pdf')) { toast('⚠️ PDF files lang ang accepted!', true); return; }
+  if (file.size > 5 * 1024 * 1024) { toast('⚠️ File too large! Max 5MB.', true); return; }
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const meta = { name: file.name, size: formatBytes(file.size), ts: new Date().toISOString() };
+    localStorage.setItem('qdg_resume_data', e.target.result);
+    localStorage.setItem('qdg_resume_meta', JSON.stringify(meta));
+    saveResumeSettings();
+    loadMediaPanel();
+    toast('✓ Resume uploaded! Lalabas na sa portfolio.');
+  };
+  reader.readAsDataURL(file);
+  event.target.value = '';
+}
+
+function removeResume() {
+  if (!confirm('Remove resume?')) return;
+  localStorage.removeItem('qdg_resume_data');
+  localStorage.removeItem('qdg_resume_meta');
+  loadMediaPanel();
+  toast('🗑️ Resume removed');
+}
+
+function saveResumeSettings() {
+  const directLink = document.getElementById('resumeDirectLink')?.value || '';
+  const visible = document.getElementById('resumeVisible')?.checked !== false;
+  localStorage.setItem('qdg_resume_settings', JSON.stringify({ visible, directLink }));
+  // Also update meta with direct link
+  const meta = JSON.parse(localStorage.getItem('qdg_resume_meta') || 'null');
+  if (meta && directLink) { meta.directLink = directLink; localStorage.setItem('qdg_resume_meta', JSON.stringify(meta)); }
+  toast('✓ Resume settings saved!');
+}
+
+function formatBytes(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/(1024*1024)).toFixed(1) + ' MB';
+}
+
+// Drag and drop for resume
+document.addEventListener('DOMContentLoaded', () => {
+  const dropZone = document.getElementById('resumeDropZone');
+  if (dropZone) {
+    dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+    dropZone.addEventListener('drop', e => {
+      e.preventDefault(); dropZone.classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        const dt = new DataTransfer(); dt.items.add(file);
+        document.getElementById('resumeFileInput').files = dt.files;
+        handleResumeUpload({ target: document.getElementById('resumeFileInput') });
+      }
+    });
+  }
+});
+
+/* ═══ INBOX ═══ */
 function getInbox() { try { return JSON.parse(localStorage.getItem(INBOX_KEY)||'[]'); } catch { return []; } }
 function saveInbox(inbox) { localStorage.setItem(INBOX_KEY, JSON.stringify(inbox)); }
 
@@ -779,9 +984,7 @@ function setInboxFilter(filter, btn) {
 }
 
 function fmtDate(iso) {
-  const d = new Date(iso);
-  const now = new Date();
-  const diff = now - d;
+  const d = new Date(iso), now = new Date(), diff = now - d;
   if (diff < 60000) return 'Just now';
   if (diff < 3600000) return Math.floor(diff/60000)+'m ago';
   if (diff < 86400000) return Math.floor(diff/3600000)+'h ago';
@@ -793,34 +996,26 @@ function loadInboxPanel() {
   let inbox = getInbox();
   if (inboxFilter === 'unread') inbox = inbox.filter(m=>!m.read);
   if (inboxFilter === 'replied') inbox = inbox.filter(m=>m.replied);
-
   const count = inbox.length;
   document.getElementById('inboxCount').textContent = `${count} message${count!==1?'s':''}`;
-
   const list = document.getElementById('inboxList');
   if (!inbox.length) {
-    list.innerHTML = `<div class="inbox-empty"><div class="inbox-empty-ico">${inboxFilter==='unread'?'✅':inboxFilter==='replied'?'💬':'📭'}</div><div>${inboxFilter==='all'?'Wala pang messages.<br>Pag nagpadala ng message sa portfolio, makikita dito!':inboxFilter==='unread'?'Lahat ng messages nabasa na!':'Wala pang replied messages.'}</div></div>`;
+    list.innerHTML = `<div class="inbox-empty"><div class="inbox-empty-ico">${inboxFilter==='unread'?'✅':inboxFilter==='replied'?'💬':'📭'}</div><div>${inboxFilter==='all'?'Wala pang messages.<br>Pag nagpadala ng message sa , makikita dito!':inboxFilter==='unread'?'Lahat ng messages nabasa na!':'Wala pang replied messages.'}</div></div>`;
     return;
   }
-
   list.innerHTML = inbox.map(m => {
     const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     const classes = ['msg-card', m.read?'read':'', m.replied?'replied':''].filter(Boolean).join(' ');
     return `<div class="${classes}" onclick="openMessage(${m.id})">
-      <div class="msg-top">
-        <div class="msg-sender">${esc(m.name)}</div>
-        <div class="msg-time">${fmtDate(m.ts)}</div>
-      </div>
+      <div class="msg-top"><div class="msg-sender">${esc(m.name)}</div><div class="msg-time">${fmtDate(m.ts)}</div></div>
       <div class="msg-subject">${esc(m.subject)}</div>
       <div class="msg-preview">${esc(m.message)}</div>
       <div class="msg-badges">
         ${!m.read?'<span class="msg-badge badge-unread">● UNREAD</span>':''}
         ${m.replied?'<span class="msg-badge badge-replied">↩ REPLIED</span>':''}
         <span class="msg-badge badge-email">${esc(m.email)}</span>
-      </div>
-    </div>`;
+      </div></div>`;
   }).join('');
-
   updateInboxBadge();
 }
 
@@ -828,30 +1023,17 @@ function openMessage(id) {
   const inbox = getInbox();
   const msg = inbox.find(m=>m.id===id);
   if (!msg) return;
-
-  /* Mark as read */
-  if (!msg.read) {
-    msg.read = true; saveInbox(inbox); updateInboxBadge();
-    loadInboxPanel();
-  }
-
+  if (!msg.read) { msg.read = true; saveInbox(inbox); updateInboxBadge(); loadInboxPanel(); }
   currentMsgId = id;
   const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const ct = load('contact');
-  const myEmail = ct.email || 'queenievillapando11030713@gmail.com';
   const replySubject = msg.subject.startsWith('Re: ') ? msg.subject : 'Re: ' + msg.subject;
-
   document.getElementById('msgDetailContent').innerHTML = `
-    <div class="msg-detail-header">
-      <div class="msg-detail-subject">${esc(msg.subject)}</div>
-      <div class="msg-meta-row"><span class="msg-meta-label">From</span><span class="msg-meta-val"><strong>${esc(msg.name)}</strong> &lt;<a href="mailto:${esc(msg.email)}">${esc(msg.email)}</a>&gt;</span></div>
-      <div class="msg-meta-row"><span class="msg-meta-label">Date</span><span class="msg-meta-val">${new Date(msg.ts).toLocaleString('en-PH',{dateStyle:'full',timeStyle:'short'})}</span></div>
-      ${msg.replied?'<div class="msg-meta-row"><span class="msg-meta-label">Status</span><span class="msg-meta-val" style="color:var(--sky)">↩ Already replied</span></div>':''}
-    </div>
-    <div class="msg-body-box">
-      <div class="msg-body-label">Message</div>
-      <div class="msg-body-text">${esc(msg.message)}</div>
-    </div>
+    <div class="msg-detail-subject">${esc(msg.subject)}</div>
+    <div class="msg-meta-row"><span class="msg-meta-label">From</span><span class="msg-meta-val"><strong>${esc(msg.name)}</strong> &lt;<a href="mailto:${esc(msg.email)}">${esc(msg.email)}</a>&gt;</span></div>
+    <div class="msg-meta-row"><span class="msg-meta-label">Date</span><span class="msg-meta-val">${new Date(msg.ts).toLocaleString('en-PH',{dateStyle:'full',timeStyle:'short'})}</span></div>
+    ${msg.replied?'<div class="msg-meta-row"><span class="msg-meta-label">Status</span><span class="msg-meta-val" style="color:var(--sky)">↩ Already replied</span></div>':''}
+    <div class="msg-body-box"><div class="msg-body-label">Message</div><div class="msg-body-text">${esc(msg.message)}</div></div>
     <div class="reply-area">
       <div class="reply-area-label">↩ Quick Reply</div>
       <div class="reply-composer">
@@ -859,7 +1041,7 @@ function openMessage(id) {
         <div class="reply-subject-line">Subject: <span>${esc(replySubject)}</span></div>
         <textarea id="replyBody" placeholder="Type your reply here…"></textarea>
         <div class="reply-actions">
-          <span class="reply-hint">Will open in your email client.</span>
+          <span class="reply-hint">Opens your email/mail app automatically.</span>
           <div style="display:flex;gap:0.6rem;">
             <button class="delete-btn" onclick="deleteMessage(${id})">🗑️ Delete</button>
             <button class="reply-btn" onclick="sendReply(${id},'${esc(msg.email)}','${esc(replySubject).replace(/'/g,"\\'")}')">↩ Send Reply</button>
@@ -867,27 +1049,20 @@ function openMessage(id) {
         </div>
       </div>
     </div>`;
-
   openModal('msgModal');
 }
 
 function sendReply(id, toEmail, subject) {
   const body = document.getElementById('replyBody').value.trim();
   if (!body) { toast('⚠️ Isulat muna ang reply!', true); return; }
-
-  const ct = load('contact');
-  const myEmail = ct.email || 'queenievillapando11030713@gmail.com';
-  const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&from=${encodeURIComponent(myEmail)}&body=${encodeURIComponent(body)}`;
-  window.open(mailtoUrl, '_blank');
-
-  /* Mark as replied */
+  // Use mailto: which opens native mail on all devices including mobile
+  const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoUrl; // Use location.href instead of window.open for better mobile support
   const inbox = getInbox();
   const msg = inbox.find(m=>m.id===id);
   if (msg) { msg.replied=true; saveInbox(inbox); }
-
-  toast('✓ Email client opened — send ang reply mo!');
-  closeModal('msgModal');
-  loadInboxPanel();
+  toast('✓ Opening email app…');
+  setTimeout(() => { closeModal('msgModal'); loadInboxPanel(); }, 500);
 }
 
 function deleteMessage(id) {
@@ -895,7 +1070,6 @@ function deleteMessage(id) {
   const inbox = getInbox().filter(m=>m.id!==id);
   saveInbox(inbox); closeModal('msgModal'); loadInboxPanel(); updateInboxBadge(); toast('🗑️ Message deleted');
 }
-
 function clearInbox() {
   if (!confirm('Clear ALL messages? Hindi na ito mabawi.')) return;
   localStorage.removeItem(INBOX_KEY); loadInboxPanel(); updateInboxBadge(); toast('🗑️ Inbox cleared');
